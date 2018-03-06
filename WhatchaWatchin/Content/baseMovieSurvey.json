@@ -1,0 +1,94 @@
+﻿	{
+		"comedy": [
+			{
+				"name": "downsizing",
+				"id": "0",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BNDYxNDQ5OTYxOV5BMl5BanBnXkFtZTgwOTcyODkxNDM@._V1_SX300.jpg",
+				"rated": "R"
+			},
+			{
+				"name": "big sick",
+				"id": "1",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BZWM4YzZjOTEtZmU5ZS00ZTRkLWFiNjAtZTEwNzIzMDM5MjdmXkEyXkFqcGdeQXVyNDg2MjUxNjM@._V1_SX300.jpg",
+				"rated": "R"
+			},
+			{
+				"name": "the lego movie",
+				"id": "3",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_SX300.jpg",
+				"rated": "PG"
+			},
+			{
+				"name": "the house",
+				"id": "4",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc0NDYwNzU2M15BMl5BanBnXkFtZTgwOTUxNDg0MTI@._V1_SX300.jpg",
+				"rated": "R"
+			},
+			{
+				"name": "father figures",
+				"id": "5",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3MDQ4MDI1M15BMl5BanBnXkFtZTgwMDYxMjcxNDM@._V1_SX300.jpg",
+				"rated": "R"
+			}
+			// {
+			//     "name": "the boss baby"
+			// },
+			// {
+			//     "name": "coco"
+			// },
+			// {
+			//     "name": "bridesmaids"
+			// },
+			// {
+			//     "name": "napoleon dynamite"
+			// },
+			// {
+			//     "name": "the princess bride"
+			// }
+		],
+		"drama": [
+			{
+				"name": "dunkirk",
+				"id": "0",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BN2YyZjQ0NTEtNzU5MS00NGZkLTg0MTEtYzJmMWY3MWRhZjM2XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_SX300.jpg",
+				"rated": "PG-13"
+			},
+			{
+				"name": "the founder",
+				"id": "1",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMzExNDg0MDk1M15BMl5BanBnXkFtZTgwNzE1Mjg0MDI@._V1_SX300.jpg",
+				"rated": "PG-13"
+			},
+			{
+				"name": "flatliners",
+				"id": "2",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3MDE3NTM3Ml5BMl5BanBnXkFtZTgwNzgwNTg4NjE@._V1_SX300.jpg",
+				"rated": "R"
+			},
+			{
+				"name": "hidden figures",
+				"id": "3",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMzg2Mzg4YmUtNDdkNy00NWY1LWE3NmEtZWMwNGNlMzE5YzU3XkEyXkFqcGdeQXVyMjA5MTIzMjQ@._V1_SX300.jpg",
+				"rated": "PG"
+			},
+			{
+				"name": "phantom thread",
+				"id": "4",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUxODcwOTU2Nl5BMl5BanBnXkFtZTgwOTUzNjY2NDM@._V1_SX300.jpg",
+				"rated": "R"
+			},
+			{
+				"name": "wonder",
+				"id": "5",
+				"poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BYjFhOWY0OTgtNDkzMC00YWJkLTk1NGEtYWUxNjhmMmQ5ZjYyXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg",
+				"rated": "PG"
+			}
+			// {
+			//     "name": "lady bird"
+			// },
+			// {
+			//     "name": "darkest hour"
+			// },
+
+		]
+	}

@@ -21,7 +21,7 @@ namespace WhatchaWatchin.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("WhatchaWatchinConnection", throwIfV1Schema: false)
         {
         }
 

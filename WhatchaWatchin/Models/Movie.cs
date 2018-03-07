@@ -1,10 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Models
+﻿namespace Models
 {
     public class Movie
     {
@@ -52,6 +46,29 @@ namespace Models
             ImdbRating = imdbRating;
             Website = website;
             ImdbID = imdbID;
+        }
+    }
+    public class ReviewedMovie : Movie
+    {
+        public int UserID { get; set; }
+        public int Rating { get; set; }
+
+        public ReviewedMovie(Movie movie, int userID, int rating)
+        {
+            UserID = userID;
+            Rating = rating;
+            Title = movie.Title;
+            Plot = movie.Plot;
+            Poster = movie.Poster;
+            Genre = movie.Genre;
+            Type = movie.Type;
+            Year = movie.Year;
+            MpaaRating = movie.MpaaRating;
+            Runtime = movie.Runtime;
+            Language = movie.Language;
+            ImdbRating = movie.ImdbRating;
+            Website = movie.Website;
+            ImdbID = movie.ImdbID;
         }
     }
 }

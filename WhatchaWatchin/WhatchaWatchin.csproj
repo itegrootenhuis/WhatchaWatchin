@@ -447,13 +447,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\PickGenre.cshtml" />
     <Content Include="Views\Home\Rate.cshtml" />
-    <Content Include="Views\Home\SendData.cshtml" />
-    <Content Include="Views\ReviewedMedias\Create.cshtml" />
-    <Content Include="Views\ReviewedMedias\Delete.cshtml" />
-    <Content Include="Views\ReviewedMedias\Details.cshtml" />
-    <Content Include="Views\ReviewedMedias\Edit.cshtml" />
-    <Content Include="Views\ReviewedMedias\Index.cshtml" />
-    <Content Include="Views\ReviewedMedias\MediaView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

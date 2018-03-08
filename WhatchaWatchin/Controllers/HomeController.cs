@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Microsoft.AspNet.Identity;
+using Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,11 @@ using System.Web.Mvc;
 
 namespace WhatchaWatchin.Controllers
 {
+
     [Authorize]
     public class HomeController : Controller
     {
+        //dbobject
         public ActionResult Index()
         {
             return View();
@@ -51,6 +54,18 @@ namespace WhatchaWatchin.Controllers
                 return View(firstMovieList);
 
             }
+        }
+        public ActionResult SendData(string[] rating)
+        {
+            List<ReviewedMovie> list = new List<ReviewedMovie>();
+
+            for (int i = 0; i < rating.Length; i++)
+            {
+                ReviewedMovie reviewedMovie = new ReviewedMovie(i, User.Identity.GetUserId(), int.Parse(rating[i]));
+                list.Add(reviewedMovie);
+            }
+
+            return View(list);
         }
         public ActionResult SearchMovie(string title)
         {
@@ -108,24 +123,30 @@ namespace WhatchaWatchin.Controllers
         }
         public static List<Movie> ComedyMovieList()
         {
-            List<Movie> comedies = new List<Movie>();
-            comedies.Add(CreateMovieByTitle("father figures"));
-            comedies.Add(CreateMovieByTitle("downsizing"));
-            comedies.Add(CreateMovieByTitle("big_sick"));
-            comedies.Add(CreateMovieByTitle("Lego_movie"));
-            comedies.Add(CreateMovieByTitle("the house"));
+            List<Movie> comedies = new List<Movie>
+            {
+                CreateMovieByTitle("father figures"),
+                CreateMovieByTitle("downsizing"),
+                CreateMovieByTitle("big_sick"),
+                CreateMovieByTitle("Lego_movie"),
+                CreateMovieByTitle("the house"),
+                CreateMovieByTitle("Coco")
+            };
+
 
             return comedies;
         }
         public static List<Movie> DramaMovieList()
         {
-            List<Movie> drama = new List<Movie>();
-            drama.Add(CreateMovieByTitle("dunkirk"));
-            drama.Add(CreateMovieByTitle("the_founder"));
-            drama.Add(CreateMovieByTitle("flatliners"));
-            drama.Add(CreateMovieByTitle("hidden_figures"));
-            drama.Add(CreateMovieByTitle("phantom_thread"));
-            drama.Add(CreateMovieByTitle("wonder"));
+            List<Movie> drama = new List<Movie>
+            {
+                CreateMovieByTitle("dunkirk"),
+                CreateMovieByTitle("the_founder"),
+                CreateMovieByTitle("flatliners"),
+                CreateMovieByTitle("hidden_figures"),
+                CreateMovieByTitle("phantom_thread"),
+                CreateMovieByTitle("wonder")
+            };
 
 
             return drama;

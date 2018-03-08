@@ -10,19 +10,19 @@
 
 <body>
     <div class="row">
-        <form action="/" method="post">
+        <form action="SendData" method="post">
             @foreach (var movie in Model)
-            {
-                <div class="col-md-4 movie">
-                    <h1>@movie.Title</h1>
-                    <img src="@movie.Poster" alt="Alternate Text" />
-                    <p>Rated @movie.MpaaRating</p>
-                    <p>@movie.Plot</p>
-                    <input type="number" name="name" value="" min="1" max="5" />
-                </div>
-            }
+                    {
+                        <div class="col-md-4 movie">
+                            <h1>@movie.Title</h1>
+                            <img src="@movie.Poster" alt="Alternate Text" />
+                            <p>Rated @movie.MpaaRating</p>
+                            <p>@movie.Plot</p>
+                            <input type="number" name="rating[]" value="5" min="1" max="10" />
+                        </div>
+                    }
+                        <div><input type="submit" name="Ratings" value="Submit" /></div>
         </form>
     </div>
-    <input type="submit" name="Ratings" value="Submit" />
 </body>
 </html>

@@ -14,7 +14,6 @@
         //private JToken _imdbRating;
         //private JToken _website;
         //private JToken _imdbID;
-
         public string Title { get; set; }
         public string Plot { get; set; }
         public string Poster { get; set; }

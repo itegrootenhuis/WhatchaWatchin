@@ -1,10 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Models
+﻿namespace Models
 {
     public class Movie
     {
@@ -20,7 +14,6 @@ namespace Models
         //private JToken _imdbRating;
         //private JToken _website;
         //private JToken _imdbID;
-
         public string Title { get; set; }
         public string Plot { get; set; }
         public string Poster { get; set; }

@@ -4,12 +4,17 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using WhatchaWatchin.Models;
+using Models;
+using System;
+using System.Data;
+using System.Web;
+using Microsoft.AspNet.Identity;
 
 namespace WhatchaWatchin.Controllers
 {
     public class ReviewedMediasController : Controller
     {
-        private WhatchaWatchinEntities1 db = new WhatchaWatchinEntities1();
+        public wwEntities db = new wwEntities();
 
         public ActionResult MediaView()
         {
@@ -24,6 +29,45 @@ namespace WhatchaWatchin.Controllers
         //{
 
         //}
+
+        public ActionResult SendData(string[] userRatings)
+        {
+            List<int> baseSurveyMovieIDs;
+            List<ReviewedMedia> reviewedMediaList = new List<ReviewedMedia>();
+            if (Session["genreChoice"].ToString() == "Comedy")
+            {
+                baseSurveyMovieIDs = new List<int>() { 1, 2, 3, 4, 5 };
+            }
+            else
+            {
+                baseSurveyMovieIDs = new List<int>() { 6, 7, 8, 9, 10 };
+            }
+            for (int i = 0; i < userRatings.Length; i++)
+            {
+                ReviewedMedia reviewedMovie = new ReviewedMedia
+                {
+                    MovieID = baseSurveyMovieIDs[i],
+                    UserID = User.Identity.GetUserId(),
+                    UserRating = int.Parse(userRatings[i])
+                };
+                reviewedMediaList.Add(reviewedMovie);
+            }
+            StoreInDatabase(reviewedMediaList);
+            //return View(Url.Action("index", "Home"));
+            return RedirectToAction("Index", "Home");
+        }
+
+        public void StoreInDatabase(List<ReviewedMedia> baseFive)
+        {
+            foreach (ReviewedMedia movie in baseFive)
+            {
+                if (ModelState.IsValid)
+                {
+                    db.ReviewedMedias.Add(movie);
+                }
+            }
+            db.SaveChanges();
+        }
 
         // GET: ReviewedMedias/Details/5
         public ActionResult Details(int? id)

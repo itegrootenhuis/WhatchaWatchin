@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WhatchaWatchinModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="wwModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'WhatchaWatchin.dbo.__MigrationHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="__MigrationHistory">
@@ -115,7 +115,7 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
           <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="UserRating" Type="decimal" Precision="5" Scale="2" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="WhatchaWatchinModelStoreContainer">
+        <EntityContainer Name="wwModelStoreContainer">
           <EntitySet Name="Media" EntityType="Self.Media" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ReviewedMedia" EntityType="Self.ReviewedMedia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" store:Type="Tables" store:Schema="dbo">
@@ -170,10 +170,11 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
     FROM [dbo].[AspNetUsers] AS [AspNetUsers]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="WhatchaWatchinModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="wwModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Medium">
           <Key>
             <PropertyRef Name="Id" />
@@ -272,7 +273,7 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
           <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
           <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="WhatchaWatchinEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="wwEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Media" EntityType="Self.Medium" />
           <EntitySet Name="ReviewedMedias" EntityType="Self.ReviewedMedia" />
           <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
@@ -287,9 +288,9 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WhatchaWatchinModelStoreContainer" CdmEntityContainer="WhatchaWatchinEntities1">
+        <EntityContainerMapping StorageEntityContainer="wwModelStoreContainer" CdmEntityContainer="wwEntities">
           <EntitySetMapping Name="Media">
-            <EntityTypeMapping TypeName="WhatchaWatchinModel.Medium">
+            <EntityTypeMapping TypeName="wwModel.Medium">
               <MappingFragment StoreEntitySet="Media">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -308,7 +309,7 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ReviewedMedias">
-            <EntityTypeMapping TypeName="WhatchaWatchinModel.ReviewedMedia">
+            <EntityTypeMapping TypeName="wwModel.ReviewedMedia">
               <MappingFragment StoreEntitySet="ReviewedMedia">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MovieID" ColumnName="MovieID" />
@@ -318,7 +319,7 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="C__MigrationHistory">
-            <EntityTypeMapping TypeName="WhatchaWatchinModel.C__MigrationHistory">
+            <EntityTypeMapping TypeName="wwModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">
                 <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
                 <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
@@ -328,7 +329,7 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="WhatchaWatchinModel.AspNetRole">
+            <EntityTypeMapping TypeName="wwModel.AspNetRole">
               <MappingFragment StoreEntitySet="AspNetRoles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -336,7 +337,7 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserClaims">
-            <EntityTypeMapping TypeName="WhatchaWatchinModel.AspNetUserClaim">
+            <EntityTypeMapping TypeName="wwModel.AspNetUserClaim">
               <MappingFragment StoreEntitySet="AspNetUserClaims">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -346,7 +347,7 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserLogins">
-            <EntityTypeMapping TypeName="WhatchaWatchinModel.AspNetUserLogin">
+            <EntityTypeMapping TypeName="wwModel.AspNetUserLogin">
               <MappingFragment StoreEntitySet="AspNetUserLogins">
                 <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
                 <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -355,7 +356,7 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserRoles">
-            <EntityTypeMapping TypeName="WhatchaWatchinModel.AspNetUserRole">
+            <EntityTypeMapping TypeName="wwModel.AspNetUserRole">
               <MappingFragment StoreEntitySet="AspNetUserRoles">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
@@ -363,7 +364,7 @@ warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a pr
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUsers">
-            <EntityTypeMapping TypeName="WhatchaWatchinModel.AspNetUser">
+            <EntityTypeMapping TypeName="wwModel.AspNetUser">
               <MappingFragment StoreEntitySet="AspNetUsers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Email" ColumnName="Email" />

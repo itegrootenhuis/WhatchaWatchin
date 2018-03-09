@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\Models\WhatchaWatchin.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\Models\NewWhatchaWatchin.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

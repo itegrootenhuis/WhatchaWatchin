@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
+using WhatchaWatchin.Models;
+using WhatchaWatchin.Controllers;
 
 namespace WhatchaWatchin.Controllers
 {
@@ -16,6 +18,24 @@ namespace WhatchaWatchin.Controllers
         //dbobject
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult MovieSuggestions()
+        {
+            //this is code for mvp
+            if (Session["genreChoice"].ToString() == "Comedy")
+            {
+                Movie movieDisplay = CreateMovieByTitle("Other Guys");
+                ViewBag.movieDisplay = movieDisplay;
+                return View();
+            }
+            else if (Session["genreChoice"].ToString() == "Drama")
+            {
+                Movie movieDisplay = CreateMovieByTitle("The Godfather");
+                ViewBag.movieDisplay = movieDisplay;
+                return View(); 
+            }
             return View();
         }
 
@@ -32,15 +52,17 @@ namespace WhatchaWatchin.Controllers
 
             return View();
         }
+
         public ActionResult PickGenre()
         {
             ViewBag.Message = "Pick a Genre";
 
             return View();
         }
+
         public ActionResult Rate(string genreChoice)
         {
-
+            Session["genreChoice"] = genreChoice;
 
             if (genreChoice == "Comedy")
             {
@@ -55,18 +77,33 @@ namespace WhatchaWatchin.Controllers
 
             }
         }
-        public ActionResult SendData(string[] rating)
-        {
-            List<ReviewedMovie> list = new List<ReviewedMovie>();
 
-            for (int i = 0; i < rating.Length; i++)
-            {
-                ReviewedMovie reviewedMovie = new ReviewedMovie(i, User.Identity.GetUserId(), int.Parse(rating[i]));
-                list.Add(reviewedMovie);
-            }
-
-            return View(list);
-        }
+        //public ActionResult SendData(string[] userRatings)
+        //{
+        //    string[] testArr = userRatings;
+        //    List<int> baseSurveyMovieIDs;
+        //    List<ReviewedMedia> reviewedMediaList = new List<ReviewedMedia>();
+        //    if (Session["genreChoice"].ToString() == "Comedy")
+        //    {
+        //        baseSurveyMovieIDs = new List<int>() { 1, 2, 3, 4, 5 };
+        //    }
+        //    else
+        //    {
+        //        baseSurveyMovieIDs = new List<int>() { 6,7,8,9,10};
+        //    }
+        //    for (int i = 0; i < testArr.Length; i++)
+        //    {
+        //        ReviewedMedia reviewedMovie = new ReviewedMedia
+        //        {
+        //            MovieID = baseSurveyMovieIDs[i],
+        //            UserID = User.Identity.GetUserId(),
+        //            UserRating = int.Parse(userRatings[i])
+        //        };
+        //        reviewedMediaList.Add(reviewedMovie);
+        //    }
+        //    //ReviewedMediasController.StoreInDatabase(reviewedMediaList);
+        //    return RedirectToAction("StoreInDatabase", "ReviewedMediasController", new {List<ReviewedMedia> = reviewedMediaList});
+        //}
         public ActionResult SearchMovie(string title)
         {
             //HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=titanic");
@@ -125,12 +162,11 @@ namespace WhatchaWatchin.Controllers
         {
             List<Movie> comedies = new List<Movie>
             {
-                CreateMovieByTitle("father figures"),
                 CreateMovieByTitle("downsizing"),
                 CreateMovieByTitle("big_sick"),
                 CreateMovieByTitle("Lego_movie"),
                 CreateMovieByTitle("the house"),
-                CreateMovieByTitle("Coco")
+                CreateMovieByTitle("father figures"),
             };
 
 
@@ -145,7 +181,6 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("flatliners"),
                 CreateMovieByTitle("hidden_figures"),
                 CreateMovieByTitle("phantom_thread"),
-                CreateMovieByTitle("wonder")
             };
 
 

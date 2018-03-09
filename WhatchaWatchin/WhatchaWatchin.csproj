@@ -200,31 +200,46 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>WhatchaWatchin.tt</DependentUpon>
+      <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>WhatchaWatchin.tt</DependentUpon>
+      <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>WhatchaWatchin.tt</DependentUpon>
+      <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>WhatchaWatchin.tt</DependentUpon>
+      <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserRole.cs">
-      <DependentUpon>WhatchaWatchin.tt</DependentUpon>
+      <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>WhatchaWatchin.tt</DependentUpon>
+      <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Medium.cs">
-      <DependentUpon>WhatchaWatchin.tt</DependentUpon>
+      <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\NewWhatchaWatchin.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewWhatchaWatchin.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewWhatchaWatchin.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewWhatchaWatchin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewWhatchaWatchin.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\ReviewedMedia.cs">
-      <DependentUpon>WhatchaWatchin.tt</DependentUpon>
+      <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ReviewedMovie.cs" />
     <Compile Include="Models\WhatchaWatchin.Context.cs">
@@ -359,6 +374,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\NewWhatchaWatchin.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewWhatchaWatchin.edmx</DependentUpon>
+      <LastGenOutput>NewWhatchaWatchin.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NewWhatchaWatchin.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewWhatchaWatchin.edmx</DependentUpon>
+      <LastGenOutput>NewWhatchaWatchin.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\WhatchaWatchin.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WhatchaWatchin.edmx</DependentUpon>
@@ -399,6 +424,13 @@
     </EntityDeploy>
     <Content Include="Models\WhatchaWatchin.edmx.diagram">
       <DependentUpon>WhatchaWatchin.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\NewWhatchaWatchin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NewWhatchaWatchin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NewWhatchaWatchin.edmx.diagram">
+      <DependentUpon>NewWhatchaWatchin.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -447,7 +479,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\PickGenre.cshtml" />
     <Content Include="Views\Home\Rate.cshtml" />
-    <Content Include="Views\Home\SendData.cshtml" />
+    <Content Include="Views\ReviewedMedias\SendData.cshtml" />
     <Content Include="Views\ReviewedMedias\Create.cshtml" />
     <Content Include="Views\ReviewedMedias\Delete.cshtml" />
     <Content Include="Views\ReviewedMedias\Details.cshtml" />

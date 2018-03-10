@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "SingleRate";
+}
+
+<div class="row">
+	<div class="col-md-4">
+		<form action="notcreatedyet">
+			<h2>@ViewBag.SingleRateErrorMessage</h2>
+			<h1>Please rate <br /> @ViewBag.theTitle!</h1>
+			<input type="number" name="userRating" value="5" min="1" max="10" />
+			<input type="submit" name="Ratings" value="Submit" />
+		</form>
+	</div>
+	<div class="col-md-4">
+		<br />
+		<img src="@ViewBag.thePoster" />		
+	</div>
+	<div class="col-md-4">
+		<h2>Year: @ViewBag.theYear</h2>
+		<h2>Genre: @ViewBag.theGenre</h2>
+		<h4>Plot: @ViewBag.thePlot</h4>
+
+	</div>
+</div>

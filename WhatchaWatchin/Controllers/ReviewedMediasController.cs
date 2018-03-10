@@ -63,10 +63,27 @@ namespace WhatchaWatchin.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    //string myString = string.Format("SELECT * FROM dbo.ReviewedMedia WHERE UserID LIKE {0} AND MovieID LIKE {1}", movie.UserID, movie.MovieID);
+                    //List<ReviewedMedia> myList = new List<ReviewedMedia>();
+                    //myList = db.ReviewedMedias.SelectMany<ReviewedMedia>(myString);
+                    //bool r = db.ReviewedMedias.Contains(movie);
+                    //var t = int.Parse(db.ReviewedMedias.Find(movie.MovieID));
+                    //var y = (db.ReviewedMedias.Find(movie.MovieID) != null);
+                    // (db.ReviewedMedias.Find(movie.UserID) != null && db.ReviewedMedias.Find(movie.MovieID))
+                    //if (myList.Contains(movie.MovieID) && myList.Contains())
+                    //{
+                    //    ViewBag.alert = "You already have rated this movie";
+                    //    RedirectToAction("Index");
+                    //}
+                    //else
+                    //{
+                    //    db.ReviewedMedias.Add(movie);
+                    //}
                     db.ReviewedMedias.Add(movie);
                 }
             }
             db.SaveChanges();
+            RedirectToAction("index");
         }
 
         // GET: ReviewedMedias/Details/5

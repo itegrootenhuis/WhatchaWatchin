@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Models.Movie>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+
+
+<body>
+    <div class="row">
+        <form action="@Url.Action("SendData", "ReviewedMedias")" method="post">
+            @foreach (var movie in Model)
+                    {
+                        <div class="col-md-4 movie">
+                            <h1>@movie.Title</h1>
+                            <img src="@movie.Poster" alt="Alternate Text" />
+                            <p>Rated @movie.MpaaRating</p>
+                            <p>@movie.Plot</p>
+                            <input type="number" name="userRatings[]" value="5" min="1" max="10" />
+                        </div>
+                    }
+              <div><input type="submit" name="Ratings" value="Submit" /></div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿
+@{
+	ViewBag.Title = "MovieSuggestions";
+}
+<h1>We recommend @ViewBag.returnedTitle for you to watch!</h1>
+
+@*<img src="@ViewBag.movieDisplay.Poster" />*@
+
+
+@*@foreach (var movie in Model.returnedMovies)
+{
+	<div class="col-md-4 movie">
+		<h1>@movie.Title</h1>
+		<img src="@movie.Poster" alt="Alternate Text" />
+		<p>Rated @movie.MpaaRating</p>
+		<p>@movie.Plot</p>
+	</div>
+}*@
+
+<img src="@ViewBag.returnedPoster" />
+<p>Rated: @ViewBag.returnedMpaaRating</p>
+<br />
+<p>Plot: @ViewBag.returnedPlot</p>
+

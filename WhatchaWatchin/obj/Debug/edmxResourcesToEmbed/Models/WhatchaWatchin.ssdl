@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WhatchaWatchinModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WhatchaWatchin.dbo.__MigrationHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+      <PropertyRef Name="Model" />
+      <PropertyRef Name="ProductVersion" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUserClaims' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUserLogins' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUserRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'WhatchaWatchin.dbo.AspNetUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="EmailConfirmed" />
+      <PropertyRef Name="PhoneNumberConfirmed" />
+      <PropertyRef Name="TwoFactorEnabled" />
+      <PropertyRef Name="LockoutEnabled" />
+      <PropertyRef Name="AccessFailedCount" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="smalldatetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Media">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nchar" MaxLength="200" Nullable="false" />
+    <Property Name="Plot" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Year" Type="nchar" MaxLength="10" />
+    <Property Name="Type" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Runtime" Type="nchar" MaxLength="50" />
+    <Property Name="Language" Type="nchar" MaxLength="50" />
+    <Property Name="MPAARating" Type="nchar" MaxLength="10" />
+    <Property Name="IMDBRating" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="Website" Type="nvarchar(max)" />
+    <Property Name="imdbID" Type="nvarchar(max)" />
+    <Property Name="Poster" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ReviewedMedia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovieID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserRating" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WhatchaWatchinModelStoreContainer">
+    <EntitySet Name="Media" EntityType="Self.Media" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReviewedMedia" EntityType="Self.ReviewedMedia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [__MigrationHistory].[MigrationId] AS [MigrationId], 
+    [__MigrationHistory].[ContextKey] AS [ContextKey], 
+    [__MigrationHistory].[Model] AS [Model], 
+    [__MigrationHistory].[ProductVersion] AS [ProductVersion]
+    FROM [dbo].[__MigrationHistory] AS [__MigrationHistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AspNetRoles].[Id] AS [Id], 
+    [AspNetRoles].[Name] AS [Name]
+    FROM [dbo].[AspNetRoles] AS [AspNetRoles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AspNetUserClaims].[Id] AS [Id], 
+    [AspNetUserClaims].[UserId] AS [UserId], 
+    [AspNetUserClaims].[ClaimType] AS [ClaimType], 
+    [AspNetUserClaims].[ClaimValue] AS [ClaimValue]
+    FROM [dbo].[AspNetUserClaims] AS [AspNetUserClaims]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AspNetUserLogins].[LoginProvider] AS [LoginProvider], 
+    [AspNetUserLogins].[ProviderKey] AS [ProviderKey], 
+    [AspNetUserLogins].[UserId] AS [UserId]
+    FROM [dbo].[AspNetUserLogins] AS [AspNetUserLogins]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AspNetUserRoles].[UserId] AS [UserId], 
+    [AspNetUserRoles].[RoleId] AS [RoleId]
+    FROM [dbo].[AspNetUserRoles] AS [AspNetUserRoles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AspNetUsers].[Id] AS [Id], 
+    [AspNetUsers].[Email] AS [Email], 
+    [AspNetUsers].[EmailConfirmed] AS [EmailConfirmed], 
+    [AspNetUsers].[PasswordHash] AS [PasswordHash], 
+    [AspNetUsers].[SecurityStamp] AS [SecurityStamp], 
+    [AspNetUsers].[PhoneNumber] AS [PhoneNumber], 
+    [AspNetUsers].[PhoneNumberConfirmed] AS [PhoneNumberConfirmed], 
+    [AspNetUsers].[TwoFactorEnabled] AS [TwoFactorEnabled], 
+    [AspNetUsers].[LockoutEndDateUtc] AS [LockoutEndDateUtc], 
+    [AspNetUsers].[LockoutEnabled] AS [LockoutEnabled], 
+    [AspNetUsers].[AccessFailedCount] AS [AccessFailedCount], 
+    [AspNetUsers].[UserName] AS [UserName]
+    FROM [dbo].[AspNetUsers] AS [AspNetUsers]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

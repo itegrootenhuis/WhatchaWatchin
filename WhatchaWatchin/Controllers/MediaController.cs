@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -49,7 +50,8 @@ namespace WhatchaWatchin.Controllers
                 ViewBag.thePlot = _plot;
                 ViewBag.theGenre = _genre;
                 ViewBag.theYear = _year;
-                MethodThatAddsMovieOjbectToDatabase(m);
+
+                //MethodThatAddsMovieOjbectToDatabase(m);
             //}
             //catch (Exception e)
             //{
@@ -68,13 +70,60 @@ namespace WhatchaWatchin.Controllers
 
         public void MethodThatAddsMovieOjbectToDatabase(Medium m)
         {
-            //need to add code
-            if (ModelState.IsValid)
-            {
-                db.Media.Add(m);
-                db.SaveChanges();
-                RedirectToAction("index");
-            }
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("dbo.sp_StoreMedia", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            //SqlParameter inputParameter = new SqlParameter("@UserID", User.Identity.GetUserId());
+            SqlParameter inputTitle = new SqlParameter("@Title", m.Title);
+            SqlParameter inputPlot = new SqlParameter("@Plot", m.Plot);
+            SqlParameter inputPoster = new SqlParameter("@Poster", m.Poster);
+            SqlParameter inputGenre = new SqlParameter("@Genre", m.Genre);
+            SqlParameter inputYear = new SqlParameter("@Year", m.Year);
+            SqlParameter inputType = new SqlParameter("@Type", m.Type);
+            SqlParameter inputRuntime = new SqlParameter("@Runtime", m.Runtime);
+            SqlParameter inputLanguage = new SqlParameter("@Language", m.Language);
+            SqlParameter inputMPAARating = new SqlParameter("@MPAARating", m.MPAARating);
+            SqlParameter inputIMDBRating = new SqlParameter("@IMDBRating", m.IMDBRating);
+            SqlParameter inputWebsite = new SqlParameter("@Website", m.Website);
+            SqlParameter inputimdbID = new SqlParameter("@imdbID", m.imdbID);
+
+            cmd.Parameters.Add(inputTitle);
+            cmd.Parameters.Add(inputPlot);
+            cmd.Parameters.Add(inputPoster);
+            cmd.Parameters.Add(inputGenre);
+            cmd.Parameters.Add(inputYear);
+            cmd.Parameters.Add(inputType);
+            cmd.Parameters.Add(inputRuntime);
+            cmd.Parameters.Add(inputLanguage);
+            cmd.Parameters.Add(inputMPAARating);
+            cmd.Parameters.Add(inputIMDBRating);
+            cmd.Parameters.Add(inputWebsite);
+            cmd.Parameters.Add(inputimdbID);
+
+            var da = new SqlDataAdapter(cmd);
+            var ds = new DataTable();
+            con.Open();
+
+            da.Fill(ds);
+
+            con.Close();
+
+            //cmd.Parameters.Add("@ReturnValue", SqlDbType.Int, 4).Direction = ParameterDirection.ReturnValue;
+
+            //foreach (DataRow row in ds.Rows)
+            //{
+            //    int MovieID = ds.ItemArray[0].ToString().Trim();
+            //    int mov = ds.
+            //}
+
+            //need to add code for doing it through stored proc and not db.media.add
+            //if (ModelState.IsValid)
+            //{
+            //    db.Media.Add(m);
+            //    db.SaveChanges();
+            //    RedirectToAction("index");
+            //}
         }
 
 

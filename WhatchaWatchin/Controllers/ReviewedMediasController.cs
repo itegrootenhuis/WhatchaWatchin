@@ -69,11 +69,11 @@ namespace WhatchaWatchin.Controllers
 
         public ActionResult TheAlgorithm()
         {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["testConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("dbo.test",con );
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("dbo.sp_GetRecommendedMovie", con );
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter inputParameter = new SqlParameter("@Id", 1);
+            SqlParameter inputParameter = new SqlParameter("@UserID", User.Identity.GetUserId());
             cmd.Parameters.Add(inputParameter);
 
             var da = new SqlDataAdapter(cmd);
@@ -87,20 +87,21 @@ namespace WhatchaWatchin.Controllers
 
             foreach (DataRow row in ds.Rows)
             {
-                Movie returnedMovie = new Movie();
-
-                returnedMovie.Title = row.ItemArray[1].ToString().Trim();
-                returnedMovie.Plot = row.ItemArray[2].ToString();
-                returnedMovie.Genre = row.ItemArray[3].ToString();
-                returnedMovie.Year = int.Parse(row.ItemArray[4].ToString());
-                returnedMovie.Type = row.ItemArray[5].ToString().Trim();
-                returnedMovie.Runtime = row.ItemArray[6].ToString().Trim();
-                returnedMovie.Language = row.ItemArray[7].ToString().Trim();
-                returnedMovie.MpaaRating = row.ItemArray[8].ToString().Trim();
-                returnedMovie.ImdbRating = row.ItemArray[9].ToString();
-                returnedMovie.Website = row.ItemArray[10].ToString();
-                returnedMovie.ImdbID = row.ItemArray[11].ToString();
-                returnedMovie.Poster = row.ItemArray[12].ToString();
+                Movie returnedMovie = new Movie
+                {
+                    Title = row.ItemArray[1].ToString().Trim(),
+                    Plot = row.ItemArray[2].ToString(),
+                    Genre = row.ItemArray[3].ToString(),
+                    Year = int.Parse(row.ItemArray[4].ToString()),
+                    Type = row.ItemArray[5].ToString().Trim(),
+                    Runtime = row.ItemArray[6].ToString().Trim(),
+                    Language = row.ItemArray[7].ToString().Trim(),
+                    MpaaRating = row.ItemArray[8].ToString().Trim(),
+                    ImdbRating = row.ItemArray[9].ToString(),
+                    Website = row.ItemArray[10].ToString(),
+                    ImdbID = row.ItemArray[11].ToString(),
+                    Poster = row.ItemArray[12].ToString()
+                };
 
                 returnedMovies.Add(returnedMovie);
             }

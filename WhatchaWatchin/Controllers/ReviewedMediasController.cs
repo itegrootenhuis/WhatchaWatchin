@@ -9,6 +9,7 @@ using System;
 using System.Data;
 using System.Web;
 using Microsoft.AspNet.Identity;
+using System.Data.SqlClient;
 
 namespace WhatchaWatchin.Controllers
 {
@@ -25,10 +26,6 @@ namespace WhatchaWatchin.Controllers
         {
             return View(db.ReviewedMedias.ToList());
         }
-        //public static List<Models.Movie> ComedyList()
-        //{
-
-        //}
 
         public ActionResult SendData(string[] userRatings)
         {
@@ -63,27 +60,64 @@ namespace WhatchaWatchin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    //string myString = string.Format("SELECT * FROM dbo.ReviewedMedia WHERE UserID LIKE {0} AND MovieID LIKE {1}", movie.UserID, movie.MovieID);
-                    //List<ReviewedMedia> myList = new List<ReviewedMedia>();
-                    //myList = db.ReviewedMedias.SelectMany<ReviewedMedia>(myString);
-                    //bool r = db.ReviewedMedias.Contains(movie);
-                    //var t = int.Parse(db.ReviewedMedias.Find(movie.MovieID));
-                    //var y = (db.ReviewedMedias.Find(movie.MovieID) != null);
-                    // (db.ReviewedMedias.Find(movie.UserID) != null && db.ReviewedMedias.Find(movie.MovieID))
-                    //if (myList.Contains(movie.MovieID) && myList.Contains())
-                    //{
-                    //    ViewBag.alert = "You already have rated this movie";
-                    //    RedirectToAction("Index");
-                    //}
-                    //else
-                    //{
-                    //    db.ReviewedMedias.Add(movie);
-                    //}
                     db.ReviewedMedias.Add(movie);
                 }
             }
             db.SaveChanges();
             RedirectToAction("index");
+        }
+
+        public ActionResult TheAlgorithm()
+        {
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["testConnectionString"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("dbo.test",con );
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter inputParameter = new SqlParameter("@Id", 1);
+            cmd.Parameters.Add(inputParameter);
+
+            var da = new SqlDataAdapter(cmd);
+            var ds = new DataTable();
+            con.Open();
+
+            da.Fill(ds);
+
+            con.Close();
+            List<Movie> returnedMovies = new List<Movie>();
+
+            foreach (DataRow row in ds.Rows)
+            {
+                Movie returnedMovie = new Movie();
+
+                returnedMovie.Title = row.ItemArray[1].ToString().Trim();
+                returnedMovie.Plot = row.ItemArray[2].ToString();
+                returnedMovie.Genre = row.ItemArray[3].ToString();
+                returnedMovie.Year = int.Parse(row.ItemArray[4].ToString());
+                returnedMovie.Type = row.ItemArray[5].ToString().Trim();
+                returnedMovie.Runtime = row.ItemArray[6].ToString().Trim();
+                returnedMovie.Language = row.ItemArray[7].ToString().Trim();
+                returnedMovie.MpaaRating = row.ItemArray[8].ToString().Trim();
+                returnedMovie.ImdbRating = row.ItemArray[9].ToString();
+                returnedMovie.Website = row.ItemArray[10].ToString();
+                returnedMovie.ImdbID = row.ItemArray[11].ToString();
+                returnedMovie.Poster = row.ItemArray[12].ToString();
+
+                returnedMovies.Add(returnedMovie);
+            }
+
+            AlgorithmReturn(returnedMovies);
+            return View("MovieSuggestions");
+            //return View("MovieSuggestions", returnedMovies);
+            //return View("AlgorithmReturn", returnedMovies);
+        }
+        public void AlgorithmReturn(List<Movie> returnedMovies)
+        {
+            ViewBag.returnedTitle = returnedMovies[0].Title;
+            ViewBag.returnedPlot = returnedMovies[0].Plot;
+            ViewBag.returnedPoster = returnedMovies[0].Poster;
+            ViewBag.returnedMpaaRating = returnedMovies[0].MpaaRating;
+
+            //return View("MovieSuggestions");
         }
 
         // GET: ReviewedMedias/Details/5

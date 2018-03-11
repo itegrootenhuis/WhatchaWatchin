@@ -12,9 +12,13 @@ namespace WhatchaWatchin.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using System.Data.SqlClient;
+
     public partial class wwEntities : DbContext
     {
+        //not sure if we need the below line, but i added it -Adam
+        //internal SqlConnection con;
+
         public wwEntities()
             : base("name=wwEntities")
         {

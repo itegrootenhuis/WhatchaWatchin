@@ -14,9 +14,10 @@ namespace WhatchaWatchin.Models
     
     public partial class Medium
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public string Title { get; set; }
         public string Plot { get; set; }
+        public string Poster { get; set; }
         public string Genre { get; set; }
         public string Year { get; set; }
         public string Type { get; set; }
@@ -26,6 +27,30 @@ namespace WhatchaWatchin.Models
         public Nullable<decimal> IMDBRating { get; set; }
         public string Website { get; set; }
         public string imdbID { get; set; }
-        public string Poster { get; set; }
+
+        public Medium()
+        {
+
+        }
+
+        public Medium(string title, string plot, string poster, string genre, string year, string type, string mpaaRating, string runtime, string language, decimal imdbRating, string website, string imdbID)
+        {
+            this.Title = title;
+            this.Plot = plot;
+            this.Poster = poster;
+            this.Genre = genre;
+            this.Year = year;
+            this.Type = type;
+            this.MPAARating = mpaaRating;
+            this.Runtime = runtime;
+            this.Language = language;
+            this.IMDBRating = imdbRating;
+            this.Website = website;
+            this.imdbID = imdbID;
+
+        }
+
+
+
     }
 }

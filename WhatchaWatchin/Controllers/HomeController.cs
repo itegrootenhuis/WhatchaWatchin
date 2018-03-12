@@ -22,24 +22,6 @@ namespace WhatchaWatchin.Controllers
             return View();
         }
 
-        public ActionResult MovieSuggestions()
-        {
-            //this is code for mvp
-            if (Session["genreChoice"].ToString() == "Comedy")
-            {
-                Movie movieDisplay = CreateMovieByTitle("Other Guys");
-                ViewBag.movieDisplay = movieDisplay;
-                return View();
-            }
-            else if (Session["genreChoice"].ToString() == "Drama")
-            {
-                Movie movieDisplay = CreateMovieByTitle("The Godfather");
-                ViewBag.movieDisplay = movieDisplay;
-                return View(); 
-            }
-            return View();
-        }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -84,8 +66,7 @@ namespace WhatchaWatchin.Controllers
                 ReturnedCurrentUserRating returnedRating = new ReturnedCurrentUserRating
                 {
                     Title = row.ItemArray[0].ToString().Trim(),
-                    Rating = double.Parse(row.ItemArray[1].ToString())
-                    
+                    Rating = double.Parse(row.ItemArray[1].ToString())                   
                 };
                 returnedRatings.Add(returnedRating);
             }
@@ -112,7 +93,6 @@ namespace WhatchaWatchin.Controllers
                 return View(firstMovieList);
             }
         }
-
        
         public ActionResult SearchMovie(string title)
         {

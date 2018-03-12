@@ -73,8 +73,8 @@ namespace WhatchaWatchin.Controllers
             }
             catch (Exception e)
             {
-                ViewBag.SingleRateErrorMessage = "oops! looks like that movie title doesn't exist.";
-                return View("error");
+                ViewBag.BadMovieSearch = movieToSearch;
+                return View("ErrorSingleSearch");
             }
             return View("SingleRate");
         }

@@ -3,17 +3,14 @@ using Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
-using WhatchaWatchin.Models;
-using WhatchaWatchin.Controllers;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace WhatchaWatchin.Controllers
 {
-
     [Authorize]
     public class HomeController : Controller
     {
@@ -73,7 +70,7 @@ namespace WhatchaWatchin.Controllers
             return View("MyRatings", returnedRatings);
         }
 
-        public ActionResult MyRatings(List<ReturnedCurrentUserRating>returnedRatings)
+        public ActionResult MyRatings(List<ReturnedCurrentUserRating> returnedRatings)
         {
             return View();
         }
@@ -172,9 +169,9 @@ namespace WhatchaWatchin.Controllers
             return drama;
         }
 
-        
 
-        
+
+
     }
 
 }

@@ -50,7 +50,7 @@ namespace WhatchaWatchin.Controllers
                 reviewedMediaList.Add(reviewedMovie);
             }
             StoreInDatabase(reviewedMediaList);
-            //return View(Url.Action("index", "Home"));
+
             return RedirectToAction("Index", "Home");
         }
 

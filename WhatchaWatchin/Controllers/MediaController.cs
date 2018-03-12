@@ -1,9 +1,11 @@
-﻿using Models;
+﻿using Microsoft.AspNet.Identity;
+using Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -16,6 +18,23 @@ namespace WhatchaWatchin.Controllers
     public class MediaController : Controller
     {
         private wwEntities db = new wwEntities();
+
+        public ActionResult AddSingleRateToDB(int userRating)
+        {
+            ReviewedMedia r = new ReviewedMedia()
+            {
+                MovieID = int.Parse(Session["returnedMovieID"].ToString()),
+                UserID = User.Identity.GetUserId(),
+                UserRating = userRating
+            };
+            if (ModelState.IsValid)
+            {
+                db.ReviewedMedias.Add(r);
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("index", "home");
+        }
 
         public ActionResult GetMovieToRate(string movieToSearch)
         {
@@ -40,24 +59,23 @@ namespace WhatchaWatchin.Controllers
             JToken _website = o["Website"];
             JToken _imdbID = o["imdbID"];
 
-            // try
+            //try
             //{
-            Medium m = new Medium(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _year.ToString(), _type.ToString(), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), decimal.Parse(_imdbRating.ToString()), _website.ToString(), _imdbID.ToString());
-            //Movie m = new Movie(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _type.ToString(), int.Parse(_year.ToString()), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), _imdbRating.ToString(), _website.ToString(), _imdbID.ToString());
+                Medium m = new Medium(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _year.ToString(), _type.ToString(), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), decimal.Parse(_imdbRating.ToString()), _website.ToString(), _imdbID.ToString());
+
                 ViewBag.theTitle = _title;
                 ViewBag.thePoster = _poster;
                 ViewBag.thePlot = _plot;
                 ViewBag.theGenre = _genre;
                 ViewBag.theYear = _year;
+
                 MethodThatAddsMovieOjbectToDatabase(m);
             //}
             //catch (Exception e)
             //{
             //    ViewBag.SingleRateErrorMessage = "oops! looks like that movie title doesn't exist.";
-            //    //return view("customErrorPage");
+            //    return View("error");
             //}
-
-
             return View("SingleRate");
         }
 
@@ -68,13 +86,53 @@ namespace WhatchaWatchin.Controllers
 
         public void MethodThatAddsMovieOjbectToDatabase(Medium m)
         {
-            //need to add code
-            if (ModelState.IsValid)
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("dbo.sp_StoreMedia", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter inputTitle = new SqlParameter("@Title", m.Title);
+            SqlParameter inputPlot = new SqlParameter("@Plot", m.Plot);
+            SqlParameter inputPoster = new SqlParameter("@Poster", m.Poster);
+            SqlParameter inputGenre = new SqlParameter("@Genre", m.Genre);
+            SqlParameter inputYear = new SqlParameter("@Year", m.Year);
+            SqlParameter inputType = new SqlParameter("@Type", m.Type);
+            SqlParameter inputRuntime = new SqlParameter("@Runtime", m.Runtime);
+            SqlParameter inputLanguage = new SqlParameter("@Language", m.Language);
+            SqlParameter inputMPAARating = new SqlParameter("@MPAARating", m.MPAARating);
+            SqlParameter inputIMDBRating = new SqlParameter("@IMDBRating", m.IMDBRating);
+            SqlParameter inputWebsite = new SqlParameter("@Website", m.Website);
+            SqlParameter inputimdbID = new SqlParameter("@imdbID", m.imdbID);
+
+            cmd.Parameters.Add(inputTitle);
+            cmd.Parameters.Add(inputPlot);
+            cmd.Parameters.Add(inputPoster);
+            cmd.Parameters.Add(inputGenre);
+            cmd.Parameters.Add(inputYear);
+            cmd.Parameters.Add(inputType);
+            cmd.Parameters.Add(inputRuntime);
+            cmd.Parameters.Add(inputLanguage);
+            cmd.Parameters.Add(inputMPAARating);
+            cmd.Parameters.Add(inputIMDBRating);
+            cmd.Parameters.Add(inputWebsite);
+            cmd.Parameters.Add(inputimdbID);
+
+            var da = new SqlDataAdapter(cmd);
+            var ds = new DataTable();
+            con.Open();
+            da.Fill(ds);
+            con.Close();
+
+            List<rmID> returnedMovies = new List<rmID>();
+
+            foreach (DataRow row in ds.Rows)    
             {
-                db.Media.Add(m);
-                db.SaveChanges();
-                RedirectToAction("index");
+                rmID returnedMovie = new rmID
+                {
+                    MovieID = int.Parse(row.ItemArray[0].ToString().Trim())
+                };
+                returnedMovies.Add(returnedMovie);
             }
+            Session["returnedMovieID"] = returnedMovies[0].MovieID;
         }
 
 

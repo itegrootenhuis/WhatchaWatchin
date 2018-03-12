@@ -7,13 +7,23 @@
     <title>@ViewBag.Message</title>
 </head>
 <body>
-    <div>
-        <form action="Rate" method="post">
-            <h1>Pick a Genre</h1>
-            <p> <input type="radio" name="genreChoice" value="Comedy" />Comedy</p>
-            <p> <input type="radio" name="genreChoice" value="Drama" />Drama</p>
-            <input type="submit" name="" value="Pick Genre" />
-        </form>
-    </div>
+	<div>
+		<form action="Rate" method="post">
+			<h1>Pick a Genre</h1>
+			<p> <input type="radio" name="genreChoice" value="Comedy" />Comedy</p>
+			<p> <input type="radio" name="genreChoice" value="Drama" />Drama</p>
+			<input type="submit" name="" value="Pick Genre" />
+		</form>
+		<form action="Rate" method="post">
+			<input type="submit" name="action" value="Action" />
+		</form>
+		<form action="Rate" method="post">
+			<input type="submit" name="horror" value="Horror" />
+		</form>
+		<form action="Rate" method="post">
+			<input type="submit" name="thriller" value="Thriller" />
+		</form>
+
+	</div>
 </body>
 </html>

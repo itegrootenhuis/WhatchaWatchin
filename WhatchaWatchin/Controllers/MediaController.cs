@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Microsoft.AspNet.Identity;
+using Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,23 @@ namespace WhatchaWatchin.Controllers
     public class MediaController : Controller
     {
         private wwEntities db = new wwEntities();
+
+        public ActionResult AddSingleRateToDB(int userRating)
+        {
+            ReviewedMedia r = new ReviewedMedia()
+            {
+                MovieID = int.Parse(Session["returnedMovieID"].ToString()),
+                UserID = User.Identity.GetUserId(),
+                UserRating = userRating
+            };
+            if (ModelState.IsValid)
+            {
+                db.ReviewedMedias.Add(r);
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("index", "home");
+        }
 
         public ActionResult GetMovieToRate(string movieToSearch)
         {
@@ -41,25 +59,23 @@ namespace WhatchaWatchin.Controllers
             JToken _website = o["Website"];
             JToken _imdbID = o["imdbID"];
 
-            // try
+            //try
             //{
-            Medium m = new Medium(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _year.ToString(), _type.ToString(), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), decimal.Parse(_imdbRating.ToString()), _website.ToString(), _imdbID.ToString());
-            //Movie m = new Movie(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _type.ToString(), int.Parse(_year.ToString()), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), _imdbRating.ToString(), _website.ToString(), _imdbID.ToString());
+                Medium m = new Medium(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _year.ToString(), _type.ToString(), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), decimal.Parse(_imdbRating.ToString()), _website.ToString(), _imdbID.ToString());
+
                 ViewBag.theTitle = _title;
                 ViewBag.thePoster = _poster;
                 ViewBag.thePlot = _plot;
                 ViewBag.theGenre = _genre;
                 ViewBag.theYear = _year;
 
-                //MethodThatAddsMovieOjbectToDatabase(m);
+                MethodThatAddsMovieOjbectToDatabase(m);
             //}
             //catch (Exception e)
             //{
             //    ViewBag.SingleRateErrorMessage = "oops! looks like that movie title doesn't exist.";
-            //    //return view("customErrorPage");
+            //    return View("error");
             //}
-
-
             return View("SingleRate");
         }
 
@@ -74,7 +90,6 @@ namespace WhatchaWatchin.Controllers
             SqlCommand cmd = new SqlCommand("dbo.sp_StoreMedia", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            //SqlParameter inputParameter = new SqlParameter("@UserID", User.Identity.GetUserId());
             SqlParameter inputTitle = new SqlParameter("@Title", m.Title);
             SqlParameter inputPlot = new SqlParameter("@Plot", m.Plot);
             SqlParameter inputPoster = new SqlParameter("@Poster", m.Poster);
@@ -104,26 +119,20 @@ namespace WhatchaWatchin.Controllers
             var da = new SqlDataAdapter(cmd);
             var ds = new DataTable();
             con.Open();
-
             da.Fill(ds);
-
             con.Close();
 
-            //cmd.Parameters.Add("@ReturnValue", SqlDbType.Int, 4).Direction = ParameterDirection.ReturnValue;
+            List<rmID> returnedMovies = new List<rmID>();
 
-            //foreach (DataRow row in ds.Rows)
-            //{
-            //    int MovieID = ds.ItemArray[0].ToString().Trim();
-            //    int mov = ds.
-            //}
-
-            //need to add code for doing it through stored proc and not db.media.add
-            //if (ModelState.IsValid)
-            //{
-            //    db.Media.Add(m);
-            //    db.SaveChanges();
-            //    RedirectToAction("index");
-            //}
+            foreach (DataRow row in ds.Rows)    
+            {
+                rmID returnedMovie = new rmID
+                {
+                    MovieID = int.Parse(row.ItemArray[0].ToString().Trim())
+                };
+                returnedMovies.Add(returnedMovie);
+            }
+            Session["returnedMovieID"] = returnedMovies[0].MovieID;
         }
 
 

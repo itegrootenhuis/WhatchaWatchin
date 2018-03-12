@@ -3,40 +3,19 @@ using Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
-using WhatchaWatchin.Models;
-using WhatchaWatchin.Controllers;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace WhatchaWatchin.Controllers
 {
-
     [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult MovieSuggestions()
-        {
-            //this is code for mvp
-            if (Session["genreChoice"].ToString() == "Comedy")
-            {
-                Movie movieDisplay = CreateMovieByTitle("Other Guys");
-                ViewBag.movieDisplay = movieDisplay;
-                return View();
-            }
-            else if (Session["genreChoice"].ToString() == "Drama")
-            {
-                Movie movieDisplay = CreateMovieByTitle("The Godfather");
-                ViewBag.movieDisplay = movieDisplay;
-                return View(); 
-            }
             return View();
         }
 
@@ -85,14 +64,14 @@ namespace WhatchaWatchin.Controllers
                 {
                     Title = row.ItemArray[0].ToString().Trim(),
                     Rating = double.Parse(row.ItemArray[1].ToString())
-                    
+
                 };
                 returnedRatings.Add(returnedRating);
             }
             return View("MyRatings", returnedRatings);
         }
 
-        public ActionResult MyRatings(List<ReturnedCurrentUserRating>returnedRatings)
+        public ActionResult MyRatings(List<ReturnedCurrentUserRating> returnedRatings)
         {
             return View();
         }
@@ -113,7 +92,7 @@ namespace WhatchaWatchin.Controllers
             }
         }
 
-       
+
         public ActionResult SearchMovie(string title)
         {
             HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + title);
@@ -192,9 +171,9 @@ namespace WhatchaWatchin.Controllers
             return drama;
         }
 
-        
 
-        
+
+
     }
 
 }

@@ -9,7 +9,6 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WhatchaWatchin.Models;
 
@@ -124,7 +123,7 @@ namespace WhatchaWatchin.Controllers
 
             List<rmID> returnedMovies = new List<rmID>();
 
-            foreach (DataRow row in ds.Rows)    
+            foreach (DataRow row in ds.Rows)
             {
                 rmID returnedMovie = new rmID
                 {
@@ -138,8 +137,8 @@ namespace WhatchaWatchin.Controllers
 
 
 
-            // GET: Media
-            public ActionResult Index()
+        // GET: Media
+        public ActionResult Index()
         {
             return View(db.Media.ToList());
         }

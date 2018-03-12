@@ -8,6 +8,8 @@ using System.Net;
 using System.Web.Mvc;
 using WhatchaWatchin.Models;
 using WhatchaWatchin.Controllers;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace WhatchaWatchin.Controllers
 {
@@ -15,7 +17,6 @@ namespace WhatchaWatchin.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        //dbobject
         public ActionResult Index()
         {
             return View();
@@ -60,6 +61,42 @@ namespace WhatchaWatchin.Controllers
             return View();
         }
 
+
+        public ActionResult DisplayMyRatings()
+        {
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("dbo.sp_GetUsersReviewedMedia", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter inputParameter = new SqlParameter("@UserID", User.Identity.GetUserId());
+            cmd.Parameters.Add(inputParameter);
+
+            var da = new SqlDataAdapter(cmd);
+            var ds = new DataTable();
+            con.Open();
+            da.Fill(ds);
+            con.Close();
+
+            List<ReturnedCurrentUserRating> returnedRatings = new List<ReturnedCurrentUserRating>();
+
+            foreach (DataRow row in ds.Rows)
+            {
+                ReturnedCurrentUserRating returnedRating = new ReturnedCurrentUserRating
+                {
+                    Title = row.ItemArray[0].ToString().Trim(),
+                    Rating = double.Parse(row.ItemArray[1].ToString())
+                    
+                };
+                returnedRatings.Add(returnedRating);
+            }
+            return View("MyRatings", returnedRatings);
+        }
+
+        public ActionResult MyRatings(List<ReturnedCurrentUserRating>returnedRatings)
+        {
+            return View();
+        }
+
         public ActionResult Rate(string genreChoice)
         {
             Session["genreChoice"] = genreChoice;
@@ -68,45 +105,17 @@ namespace WhatchaWatchin.Controllers
             {
                 List<Movie> firstMovieList = ComedyMovieList();
                 return View(firstMovieList);
-
             }
             else
             {
                 List<Movie> firstMovieList = DramaMovieList();
                 return View(firstMovieList);
-
             }
         }
 
-        //public ActionResult SendData(string[] userRatings)
-        //{
-        //    string[] testArr = userRatings;
-        //    List<int> baseSurveyMovieIDs;
-        //    List<ReviewedMedia> reviewedMediaList = new List<ReviewedMedia>();
-        //    if (Session["genreChoice"].ToString() == "Comedy")
-        //    {
-        //        baseSurveyMovieIDs = new List<int>() { 1, 2, 3, 4, 5 };
-        //    }
-        //    else
-        //    {
-        //        baseSurveyMovieIDs = new List<int>() { 6,7,8,9,10};
-        //    }
-        //    for (int i = 0; i < testArr.Length; i++)
-        //    {
-        //        ReviewedMedia reviewedMovie = new ReviewedMedia
-        //        {
-        //            MovieID = baseSurveyMovieIDs[i],
-        //            UserID = User.Identity.GetUserId(),
-        //            UserRating = int.Parse(userRatings[i])
-        //        };
-        //        reviewedMediaList.Add(reviewedMovie);
-        //    }
-        //    //ReviewedMediasController.StoreInDatabase(reviewedMediaList);
-        //    return RedirectToAction("StoreInDatabase", "ReviewedMediasController", new {List<ReviewedMedia> = reviewedMediaList});
-        //}
+       
         public ActionResult SearchMovie(string title)
         {
-            //HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=titanic");
             HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + title);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();

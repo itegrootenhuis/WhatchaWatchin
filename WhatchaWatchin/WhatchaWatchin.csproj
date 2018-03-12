@@ -239,6 +239,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NewWhatchaWatchin.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ReturnedCurrentUserRating.cs" />
     <Compile Include="Models\ReviewedMedia.cs">
       <DependentUpon>NewWhatchaWatchin.tt</DependentUpon>
     </Compile>
@@ -493,6 +494,7 @@
     <Content Include="Views\Media\Details.cshtml" />
     <Content Include="Views\Media\Edit.cshtml" />
     <Content Include="Views\Media\Index.cshtml" />
+    <Content Include="Views\Home\MyRatings.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>

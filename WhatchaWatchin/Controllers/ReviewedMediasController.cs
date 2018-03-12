@@ -108,8 +108,6 @@ namespace WhatchaWatchin.Controllers
 
             AlgorithmReturn(returnedMovies);
             return View("MovieSuggestions");
-            //return View("MovieSuggestions", returnedMovies);
-            //return View("AlgorithmReturn", returnedMovies);
         }
         public void AlgorithmReturn(List<Movie> returnedMovies)
         {
@@ -117,8 +115,6 @@ namespace WhatchaWatchin.Controllers
             ViewBag.returnedPlot = returnedMovies[0].Plot;
             ViewBag.returnedPoster = returnedMovies[0].Poster;
             ViewBag.returnedMpaaRating = returnedMovies[0].MpaaRating;
-
-            //return View("MovieSuggestions");
         }
 
         // GET: ReviewedMedias/Details/5

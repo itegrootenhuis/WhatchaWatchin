@@ -59,8 +59,8 @@ namespace WhatchaWatchin.Controllers
             JToken _website = o["Website"];
             JToken _imdbID = o["imdbID"];
 
-            //try
-            //{
+            try
+            {
                 Medium m = new Medium(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _year.ToString(), _type.ToString(), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), decimal.Parse(_imdbRating.ToString()), _website.ToString(), _imdbID.ToString());
 
                 ViewBag.theTitle = _title;
@@ -70,12 +70,12 @@ namespace WhatchaWatchin.Controllers
                 ViewBag.theYear = _year;
 
                 MethodThatAddsMovieOjbectToDatabase(m);
-            //}
-            //catch (Exception e)
-            //{
-            //    ViewBag.SingleRateErrorMessage = "oops! looks like that movie title doesn't exist.";
-            //    return View("error");
-            //}
+            }
+            catch (Exception e)
+            {
+                ViewBag.SingleRateErrorMessage = "oops! looks like that movie title doesn't exist.";
+                return View("error");
+            }
             return View("SingleRate");
         }
 

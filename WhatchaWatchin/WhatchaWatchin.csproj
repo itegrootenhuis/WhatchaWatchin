@@ -496,6 +496,7 @@
     <Content Include="Views\Media\Edit.cshtml" />
     <Content Include="Views\Media\Index.cshtml" />
     <Content Include="Views\Home\MyRatings.cshtml" />
+    <Content Include="Views\Media\ErrorSingleSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

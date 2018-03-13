@@ -27,11 +27,30 @@ namespace WhatchaWatchin.Controllers
                 UserID = User.Identity.GetUserId(),
                 UserRating = userRating
             };
-            if (ModelState.IsValid)
-            {
-                db.ReviewedMedias.Add(r);
-            }
-            db.SaveChanges();
+
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("dbo.sp_StoreOrUpdateReviewedMedia", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter inputMovieID = new SqlParameter("@MovieID", r.MovieID);
+            SqlParameter inputUserID = new SqlParameter("@UserID", r.UserID);
+            SqlParameter inputUserRating = new SqlParameter("@UserRating", r.UserRating);
+
+            cmd.Parameters.Add(inputMovieID);
+            cmd.Parameters.Add(inputUserID);
+            cmd.Parameters.Add(inputUserRating);
+
+            var da = new SqlDataAdapter(cmd);
+            var ds = new DataTable();
+            con.Open();
+            da.Fill(ds);
+            con.Close();
+
+            //if (ModelState.IsValid)
+            //{
+            //    db.ReviewedMedias.Add(r);
+            //}
+            //db.SaveChanges();
 
             return RedirectToAction("index", "home");
         }
@@ -73,8 +92,8 @@ namespace WhatchaWatchin.Controllers
             }
             catch (Exception e)
             {
-                ViewBag.SingleRateErrorMessage = "oops! looks like that movie title doesn't exist.";
-                return View("error");
+                ViewBag.BadMovieSearch = movieToSearch;
+                return View("ErrorSingleSearch");
             }
             return View("SingleRate");
         }

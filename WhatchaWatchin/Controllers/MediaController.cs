@@ -9,7 +9,6 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WhatchaWatchin.Models;
 
@@ -45,12 +44,6 @@ namespace WhatchaWatchin.Controllers
             con.Open();
             da.Fill(ds);
             con.Close();
-
-            //if (ModelState.IsValid)
-            //{
-            //    db.ReviewedMedias.Add(r);
-            //}
-            //db.SaveChanges();
 
             return RedirectToAction("index", "home");
         }

@@ -2,10 +2,17 @@
 @{
 	ViewBag.Title = "MovieSuggestions";
 }
-<h1>Users with similar movie taste recommend @ViewBag.returnedTitle for you to watch!</h1>
+<h1>Users with similar movie tastes also liked @ViewBag.returnedTitle</h1>
 
 <img src="@ViewBag.returnedPoster" />
 <p>Rated: @ViewBag.returnedMpaaRating</p>
 <br />
 <p>Plot: @ViewBag.returnedPlot</p>
+
+<form action="@Url.Action("TheAlgorithm", "ReviewedMedias")">
+	<p>Doesn't sound interesting?</p>
+	<input type="submit" name="RecommendMovie" value="Get a different movie!" />
+</form>
+
+
 

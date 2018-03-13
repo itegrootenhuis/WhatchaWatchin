@@ -33,6 +33,31 @@ namespace WhatchaWatchin.Controllers
             {
                 baseSurveyMovieIDs = new List<int>() { 1, 2, 3, 4, 5 };
             }
+            else if  (Session["genreChoice"].ToString() == "Action")
+            {
+
+                baseSurveyMovieIDs = new List<int>() {38, 68, 69, 70 ,12};
+
+            }
+
+            else if (Session["genreChoice"].ToString() == "Thriller")
+            {
+
+                baseSurveyMovieIDs = new List<int>() {63,65,64,67,71};
+
+            }
+            else if (Session["genreChoice"].ToString() == "Horror")
+            {
+
+                baseSurveyMovieIDs = new List<int>() {72, 73, 74, 75, 76 };
+
+            }
+            else if (Session["genreChoice"].ToString() == "Family")
+            {
+
+                baseSurveyMovieIDs = new List<int>() {77, 78, 22, 79, 80  };
+
+            }
             else
             {
                 baseSurveyMovieIDs = new List<int>() { 6, 7, 8, 9, 10 };

@@ -19,6 +19,49 @@ namespace WhatchaWatchin.Controllers
             return View();
         }
 
+        public ActionResult MovieSuggestions()
+        {
+            //this is code for mvp
+            if (Session["genreChoice"].ToString() == "Comedy")
+            {
+                Movie movieDisplay = CreateMovieByTitle("Other Guys");
+                ViewBag.movieDisplay = movieDisplay;
+                return View();
+            }
+            else if (Session["genreChoice"].ToString() == "Action")
+            {
+                Movie movieDisplay = CreateMovieByTitle("The Avengers Age Of Ultron");
+                ViewBag.movieDisplay = movieDisplay;
+                return View(); 
+            }
+            else if (Session["genreChoice"].ToString() == "Horror")
+            {
+                Movie movieDisplay = CreateMovieByTitle("Halloween 3");
+                ViewBag.movieDisplay = movieDisplay;
+                return View();
+            }
+            else if (Session["genreChoice"].ToString() == "Thriller")
+            {
+                Movie movieDisplay = CreateMovieByTitle("Get Out");
+                ViewBag.movieDisplay = movieDisplay;
+                return View();
+            }
+            else if (Session["genreChoice"].ToString() == "Family")
+            {
+                Movie movieDisplay = CreateMovieByTitle("Despicable Me");
+                ViewBag.movieDisplay = movieDisplay;
+                return View();
+            }
+
+            else if (Session["genreChoice"].ToString() == "Drama")
+            {
+                Movie movieDisplay = CreateMovieByTitle("The Godfather");
+                ViewBag.movieDisplay = movieDisplay;
+                return View(); 
+            }
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -82,6 +125,28 @@ namespace WhatchaWatchin.Controllers
             if (genreChoice == "Comedy")
             {
                 List<Movie> firstMovieList = ComedyMovieList();
+                return View(firstMovieList);
+            }
+
+            else if (genreChoice == "Action")
+            {
+                List<Movie> firstMovieList = ActionMovieList();
+                return View(firstMovieList);
+            }
+            else if (genreChoice == "Thriller")
+            {
+                List<Movie> firstMovieList = ThrillerMovieList();
+                return View(firstMovieList);
+            }
+            else if (genreChoice == "Family")
+            {
+                List<Movie> firstMovieList = FamilyMovieList();
+                return View(firstMovieList);
+            }
+
+            else if (genreChoice == "Horror")
+            {
+                List<Movie> firstMovieList = HorrorMovieList();
                 return View(firstMovieList);
             }
             else
@@ -169,6 +234,72 @@ namespace WhatchaWatchin.Controllers
             return drama;
         }
 
+        public static List<Movie> ActionMovieList()
+        {
+
+            List<Movie> action = new List<Movie>
+            {
+                CreateMovieByTitle("Avengers"),
+                CreateMovieByTitle("The_Equalizer"),
+                CreateMovieByTitle("Taken"),
+                CreateMovieByTitle("Expendables_3"),
+                CreateMovieByTitle("Deadpool"),
+            };
+            return action;
+        }
+
+
+        public static List<Movie> HorrorMovieList()
+        {
+
+            List<Movie> horror = new List<Movie>
+            {
+                CreateMovieByTitle("krampus"),
+                CreateMovieByTitle("the purge: election year"),
+                CreateMovieByTitle("it"),
+                CreateMovieByTitle("jigsaw"),
+                CreateMovieByTitle("leatherface"),
+            };
+            return horror;
+         }
+
+        public static List<Movie> FamilyMovieList()
+        {
+            List<Movie> family = new List<Movie>
+            {
+                CreateMovieByTitle("The Boss Baby"),
+                CreateMovieByTitle("Despicable Me"),
+                CreateMovieByTitle("The Lego Batman Movie"),
+                CreateMovieByTitle("The Spongebob Squarepants Movie"),
+                CreateMovieByTitle("Minions"),
+            };
+            return family;
+        }
+
+        public static List<Movie> ThrillerMovieList()
+        {
+            List<Movie> thriller = new List<Movie>
+            {
+                CreateMovieByTitle("Get Out"),
+                CreateMovieByTitle("Transcendence"),
+                CreateMovieByTitle("Split"),
+                CreateMovieByTitle("Don't Breathe"),
+                CreateMovieByTitle("Gravity"),
+            };
+            return thriller;
+        }
+
+
+
+
+
+
+
+
+     
+
+
+        
 
 
 

@@ -19,49 +19,6 @@ namespace WhatchaWatchin.Controllers
             return View();
         }
 
-        public ActionResult MovieSuggestions()
-        {
-            //this is code for mvp
-            if (Session["genreChoice"].ToString() == "Comedy")
-            {
-                Movie movieDisplay = CreateMovieByTitle("Other Guys");
-                ViewBag.movieDisplay = movieDisplay;
-                return View();
-            }
-            else if (Session["genreChoice"].ToString() == "Action")
-            {
-                Movie movieDisplay = CreateMovieByTitle("The Avengers Age Of Ultron");
-                ViewBag.movieDisplay = movieDisplay;
-                return View(); 
-            }
-            else if (Session["genreChoice"].ToString() == "Horror")
-            {
-                Movie movieDisplay = CreateMovieByTitle("Halloween 3");
-                ViewBag.movieDisplay = movieDisplay;
-                return View();
-            }
-            else if (Session["genreChoice"].ToString() == "Thriller")
-            {
-                Movie movieDisplay = CreateMovieByTitle("Get Out");
-                ViewBag.movieDisplay = movieDisplay;
-                return View();
-            }
-            else if (Session["genreChoice"].ToString() == "Family")
-            {
-                Movie movieDisplay = CreateMovieByTitle("Despicable Me");
-                ViewBag.movieDisplay = movieDisplay;
-                return View();
-            }
-
-            else if (Session["genreChoice"].ToString() == "Drama")
-            {
-                Movie movieDisplay = CreateMovieByTitle("The Godfather");
-                ViewBag.movieDisplay = movieDisplay;
-                return View(); 
-            }
-            return View();
-        }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -82,7 +39,6 @@ namespace WhatchaWatchin.Controllers
 
             return View();
         }
-
 
         public ActionResult DisplayMyRatings()
         {
@@ -106,16 +62,11 @@ namespace WhatchaWatchin.Controllers
                 ReturnedCurrentUserRating returnedRating = new ReturnedCurrentUserRating
                 {
                     Title = row.ItemArray[0].ToString().Trim(),
-                    Rating = double.Parse(row.ItemArray[1].ToString())                   
+                    Rating = double.Parse(row.ItemArray[1].ToString())
                 };
                 returnedRatings.Add(returnedRating);
             }
             return View("MyRatings", returnedRatings);
-        }
-
-        public ActionResult MyRatings(List<ReturnedCurrentUserRating> returnedRatings)
-        {
-            return View();
         }
 
         public ActionResult Rate(string genreChoice)
@@ -155,7 +106,7 @@ namespace WhatchaWatchin.Controllers
                 return View(firstMovieList);
             }
         }
-       
+
         public ActionResult SearchMovie(string title)
         {
             HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + title);
@@ -183,6 +134,7 @@ namespace WhatchaWatchin.Controllers
 
             return View("QuizResult");
         }
+
         public static Movie CreateMovieByTitle(string title)
         {
             HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + title);
@@ -209,6 +161,7 @@ namespace WhatchaWatchin.Controllers
             Movie m = new Movie(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _type.ToString(), int.Parse(_year.ToString()), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), _imdbRating.ToString(), _website.ToString(), _imdbID.ToString());
             return m;
         }
+
         public static List<Movie> ComedyMovieList()
         {
             List<Movie> comedies = new List<Movie>
@@ -221,6 +174,7 @@ namespace WhatchaWatchin.Controllers
             };
             return comedies;
         }
+
         public static List<Movie> DramaMovieList()
         {
             List<Movie> drama = new List<Movie>
@@ -248,7 +202,6 @@ namespace WhatchaWatchin.Controllers
             return action;
         }
 
-
         public static List<Movie> HorrorMovieList()
         {
 
@@ -261,7 +214,7 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("leatherface"),
             };
             return horror;
-         }
+        }
 
         public static List<Movie> FamilyMovieList()
         {
@@ -288,21 +241,5 @@ namespace WhatchaWatchin.Controllers
             };
             return thriller;
         }
-
-
-
-
-
-
-
-
-     
-
-
-        
-
-
-
     }
-
 }

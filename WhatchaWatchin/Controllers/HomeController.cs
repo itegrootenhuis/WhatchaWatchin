@@ -3,40 +3,19 @@ using Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
-using WhatchaWatchin.Models;
-using WhatchaWatchin.Controllers;
-using System.Data.SqlClient;
-using System.Data;
 
 namespace WhatchaWatchin.Controllers
 {
-
     [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult MovieSuggestions()
-        {
-            //this is code for mvp
-            if (Session["genreChoice"].ToString() == "Comedy")
-            {
-                Movie movieDisplay = CreateMovieByTitle("Other Guys");
-                ViewBag.movieDisplay = movieDisplay;
-                return View();
-            }
-            else if (Session["genreChoice"].ToString() == "Drama")
-            {
-                Movie movieDisplay = CreateMovieByTitle("The Godfather");
-                ViewBag.movieDisplay = movieDisplay;
-                return View(); 
-            }
             return View();
         }
 
@@ -61,7 +40,6 @@ namespace WhatchaWatchin.Controllers
             return View();
         }
 
-
         public ActionResult DisplayMyRatings()
         {
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
@@ -85,16 +63,10 @@ namespace WhatchaWatchin.Controllers
                 {
                     Title = row.ItemArray[0].ToString().Trim(),
                     Rating = double.Parse(row.ItemArray[1].ToString())
-                    
                 };
                 returnedRatings.Add(returnedRating);
             }
             return View("MyRatings", returnedRatings);
-        }
-
-        public ActionResult MyRatings(List<ReturnedCurrentUserRating>returnedRatings)
-        {
-            return View();
         }
 
         public ActionResult Rate(string genreChoice)
@@ -106,6 +78,28 @@ namespace WhatchaWatchin.Controllers
                 List<Movie> firstMovieList = ComedyMovieList();
                 return View(firstMovieList);
             }
+
+            else if (genreChoice == "Action")
+            {
+                List<Movie> firstMovieList = ActionMovieList();
+                return View(firstMovieList);
+            }
+            else if (genreChoice == "Thriller")
+            {
+                List<Movie> firstMovieList = ThrillerMovieList();
+                return View(firstMovieList);
+            }
+            else if (genreChoice == "Family")
+            {
+                List<Movie> firstMovieList = FamilyMovieList();
+                return View(firstMovieList);
+            }
+
+            else if (genreChoice == "Horror")
+            {
+                List<Movie> firstMovieList = HorrorMovieList();
+                return View(firstMovieList);
+            }
             else
             {
                 List<Movie> firstMovieList = DramaMovieList();
@@ -113,7 +107,6 @@ namespace WhatchaWatchin.Controllers
             }
         }
 
-       
         public ActionResult SearchMovie(string title)
         {
             HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + title);
@@ -141,6 +134,7 @@ namespace WhatchaWatchin.Controllers
 
             return View("QuizResult");
         }
+
         public static Movie CreateMovieByTitle(string title)
         {
             HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + title);
@@ -167,6 +161,7 @@ namespace WhatchaWatchin.Controllers
             Movie m = new Movie(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _type.ToString(), int.Parse(_year.ToString()), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), _imdbRating.ToString(), _website.ToString(), _imdbID.ToString());
             return m;
         }
+
         public static List<Movie> ComedyMovieList()
         {
             List<Movie> comedies = new List<Movie>
@@ -179,6 +174,7 @@ namespace WhatchaWatchin.Controllers
             };
             return comedies;
         }
+
         public static List<Movie> DramaMovieList()
         {
             List<Movie> drama = new List<Movie>
@@ -192,9 +188,58 @@ namespace WhatchaWatchin.Controllers
             return drama;
         }
 
-        
+        public static List<Movie> ActionMovieList()
+        {
 
-        
+            List<Movie> action = new List<Movie>
+            {
+                CreateMovieByTitle("Avengers"),
+                CreateMovieByTitle("The_Equalizer"),
+                CreateMovieByTitle("Taken"),
+                CreateMovieByTitle("Expendables_3"),
+                CreateMovieByTitle("Deadpool"),
+            };
+            return action;
+        }
+
+        public static List<Movie> HorrorMovieList()
+        {
+
+            List<Movie> horror = new List<Movie>
+            {
+                CreateMovieByTitle("krampus"),
+                CreateMovieByTitle("the purge: election year"),
+                CreateMovieByTitle("it"),
+                CreateMovieByTitle("jigsaw"),
+                CreateMovieByTitle("leatherface"),
+            };
+            return horror;
+        }
+
+        public static List<Movie> FamilyMovieList()
+        {
+            List<Movie> family = new List<Movie>
+            {
+                CreateMovieByTitle("The Boss Baby"),
+                CreateMovieByTitle("Despicable Me"),
+                CreateMovieByTitle("The Lego Batman Movie"),
+                CreateMovieByTitle("The Spongebob Squarepants Movie"),
+                CreateMovieByTitle("Minions"),
+            };
+            return family;
+        }
+
+        public static List<Movie> ThrillerMovieList()
+        {
+            List<Movie> thriller = new List<Movie>
+            {
+                CreateMovieByTitle("Get Out"),
+                CreateMovieByTitle("Transcendence"),
+                CreateMovieByTitle("Split"),
+                CreateMovieByTitle("Don't Breathe"),
+                CreateMovieByTitle("Gravity"),
+            };
+            return thriller;
+        }
     }
-
 }

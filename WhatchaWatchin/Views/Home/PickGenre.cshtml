@@ -3,26 +3,28 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Message</title>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Message</title>
 </head>
 <body>
 	<div>
 		<form action="Rate" method="post">
-			<h1>Pick a Genre</h1>
-			<p> <input type="radio" name="genreChoice" value="Comedy" />Comedy</p>
-			<p> <input type="radio" name="genreChoice" value="Drama" />Drama</p>
-			<input type="submit" name="" value="Pick Genre" />
+			<input type="submit" name="genreChoice" value="Action" />
 		</form>
 		<form action="Rate" method="post">
-			<input type="submit" name="action" value="Action" />
+			<input type="submit" name="genreChoice" value="Horror" />
 		</form>
 		<form action="Rate" method="post">
-			<input type="submit" name="horror" value="Horror" />
+			<input type="submit" name="genreChoice" value="Thriller" />
 		</form>
 		<form action="Rate" method="post">
-			<input type="submit" name="thriller" value="Thriller" />
+			<input type="submit" name="genreChoice" value="Comedy" />
 		</form>
+		<form action="Rate" method="post">
+			<input type="submit" name="genreChoice" value="Drama" />
+		</form>
+		<form action="Rate" method="post">
+			<input type="submit" name="genreChoice" value="Family" />
 
 	</div>
 </body>

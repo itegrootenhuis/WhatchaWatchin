@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNet.Identity;
+using Models;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using WhatchaWatchin.Models;
-using Models;
-using System;
-using System.Data;
-using System.Web;
-using Microsoft.AspNet.Identity;
-using System.Data.SqlClient;
 
 namespace WhatchaWatchin.Controllers
 {
@@ -34,6 +32,31 @@ namespace WhatchaWatchin.Controllers
             if (Session["genreChoice"].ToString() == "Comedy")
             {
                 baseSurveyMovieIDs = new List<int>() { 1, 2, 3, 4, 5 };
+            }
+            else if (Session["genreChoice"].ToString() == "Action")
+            {
+
+                baseSurveyMovieIDs = new List<int>() { 38, 68, 69, 70, 12 };
+
+            }
+
+            else if (Session["genreChoice"].ToString() == "Thriller")
+            {
+
+                baseSurveyMovieIDs = new List<int>() { 63, 65, 64, 67, 71 };
+
+            }
+            else if (Session["genreChoice"].ToString() == "Horror")
+            {
+
+                baseSurveyMovieIDs = new List<int>() { 72, 73, 74, 75, 76 };
+
+            }
+            else if (Session["genreChoice"].ToString() == "Family")
+            {
+
+                baseSurveyMovieIDs = new List<int>() { 77, 78, 22, 79, 80 };
+
             }
             else
             {
@@ -60,17 +83,32 @@ namespace WhatchaWatchin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    db.ReviewedMedias.Add(movie);
+                    SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
+                    SqlCommand cmd = new SqlCommand("dbo.sp_StoreOrUpdateReviewedMedia", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlParameter inputMovieID = new SqlParameter("@MovieID", movie.MovieID);
+                    SqlParameter inputUserID = new SqlParameter("@UserID", movie.UserID);
+                    SqlParameter inputUserRating = new SqlParameter("@UserRating", movie.UserRating);
+
+                    cmd.Parameters.Add(inputMovieID);
+                    cmd.Parameters.Add(inputUserID);
+                    cmd.Parameters.Add(inputUserRating);
+
+                    var da = new SqlDataAdapter(cmd);
+                    var ds = new DataTable();
+                    con.Open();
+                    da.Fill(ds);
+                    con.Close();
                 }
             }
-            db.SaveChanges();
             RedirectToAction("index");
         }
 
         public ActionResult TheAlgorithm()
         {
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("dbo.sp_GetRecommendedMovie", con );
+            SqlCommand cmd = new SqlCommand("dbo.sp_GetRecommendedMovie", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter inputParameter = new SqlParameter("@UserID", User.Identity.GetUserId());
@@ -106,15 +144,7 @@ namespace WhatchaWatchin.Controllers
                 returnedMovies.Add(returnedMovie);
             }
 
-            AlgorithmReturn(returnedMovies);
-            return View("MovieSuggestions");
-        }
-        public void AlgorithmReturn(List<Movie> returnedMovies)
-        {
-            ViewBag.returnedTitle = returnedMovies[0].Title;
-            ViewBag.returnedPlot = returnedMovies[0].Plot;
-            ViewBag.returnedPoster = returnedMovies[0].Poster;
-            ViewBag.returnedMpaaRating = returnedMovies[0].MpaaRating;
+            return View("MovieSuggestions", returnedMovies);
         }
 
         // GET: ReviewedMedias/Details/5

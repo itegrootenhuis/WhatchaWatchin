@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNet.Identity;
+using Models;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using WhatchaWatchin.Models;
-using Models;
-using System;
-using System.Data;
-using System.Web;
-using Microsoft.AspNet.Identity;
-using System.Data.SqlClient;
 
 namespace WhatchaWatchin.Controllers
 {
@@ -70,7 +68,7 @@ namespace WhatchaWatchin.Controllers
         public ActionResult TheAlgorithm()
         {
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("dbo.sp_GetRecommendedMovie", con );
+            SqlCommand cmd = new SqlCommand("dbo.sp_GetRecommendedMovie", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter inputParameter = new SqlParameter("@UserID", User.Identity.GetUserId());
@@ -106,15 +104,7 @@ namespace WhatchaWatchin.Controllers
                 returnedMovies.Add(returnedMovie);
             }
 
-            AlgorithmReturn(returnedMovies);
-            return View("MovieSuggestions");
-        }
-        public void AlgorithmReturn(List<Movie> returnedMovies)
-        {
-            ViewBag.returnedTitle = returnedMovies[0].Title;
-            ViewBag.returnedPlot = returnedMovies[0].Plot;
-            ViewBag.returnedPoster = returnedMovies[0].Poster;
-            ViewBag.returnedMpaaRating = returnedMovies[0].MpaaRating;
+            return View("MovieSuggestions", returnedMovies);
         }
 
         // GET: ReviewedMedias/Details/5

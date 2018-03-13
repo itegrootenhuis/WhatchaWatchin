@@ -370,6 +370,10 @@
     <Content Include="bin\WhatchaWatchin.pdb" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Adam Tasma.jpg" />
+    <Content Include="Content\images\buckeyetroll.jpg" />
+    <Content Include="Content\images\Chamus Gilbert.jpg" />
+    <Content Include="Content\images\ian.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

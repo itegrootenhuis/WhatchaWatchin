@@ -18,7 +18,8 @@
                             <img src="@movie.Poster" alt="Alternate Text" />
                             <p>Rated @movie.MpaaRating</p>
                             <p>@movie.Plot</p>
-                            <input type="number" name="userRatings[]" value="5" min="1" max="10" />
+                            <input class="input-rating" type="number" name="userRatings[]" value="5" min="1" max="10"/>
+                            <input class="have-not-seen" type="button" name="seen" value="Have Not Seen"/>
                         </div>
                     }
               <div><input type="submit" name="Ratings" value="Submit" /></div>

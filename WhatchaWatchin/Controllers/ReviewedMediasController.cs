@@ -33,6 +33,31 @@ namespace WhatchaWatchin.Controllers
             {
                 baseSurveyMovieIDs = new List<int>() { 1, 2, 3, 4, 5 };
             }
+            else if (Session["genreChoice"].ToString() == "Action")
+            {
+
+                baseSurveyMovieIDs = new List<int>() { 38, 68, 69, 70, 12 };
+
+            }
+
+            else if (Session["genreChoice"].ToString() == "Thriller")
+            {
+
+                baseSurveyMovieIDs = new List<int>() { 63, 65, 64, 67, 71 };
+
+            }
+            else if (Session["genreChoice"].ToString() == "Horror")
+            {
+
+                baseSurveyMovieIDs = new List<int>() { 72, 73, 74, 75, 76 };
+
+            }
+            else if (Session["genreChoice"].ToString() == "Family")
+            {
+
+                baseSurveyMovieIDs = new List<int>() { 77, 78, 22, 79, 80 };
+
+            }
             else
             {
                 baseSurveyMovieIDs = new List<int>() { 6, 7, 8, 9, 10 };
@@ -58,10 +83,25 @@ namespace WhatchaWatchin.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    db.ReviewedMedias.Add(movie);
+                    SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
+                    SqlCommand cmd = new SqlCommand("dbo.sp_StoreOrUpdateReviewedMedia", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlParameter inputMovieID = new SqlParameter("@MovieID", movie.MovieID);
+                    SqlParameter inputUserID = new SqlParameter("@UserID", movie.UserID);
+                    SqlParameter inputUserRating = new SqlParameter("@UserRating", movie.UserRating);
+
+                    cmd.Parameters.Add(inputMovieID);
+                    cmd.Parameters.Add(inputUserID);
+                    cmd.Parameters.Add(inputUserRating);
+
+                    var da = new SqlDataAdapter(cmd);
+                    var ds = new DataTable();
+                    con.Open();
+                    da.Fill(ds);
+                    con.Close();
                 }
             }
-            db.SaveChanges();
             RedirectToAction("index");
         }
 

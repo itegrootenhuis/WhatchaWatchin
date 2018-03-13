@@ -45,12 +45,6 @@ namespace WhatchaWatchin.Controllers
             da.Fill(ds);
             con.Close();
 
-            //if (ModelState.IsValid)
-            //{
-            //    db.ReviewedMedias.Add(r);
-            //}
-            //db.SaveChanges();
-
             return RedirectToAction("index", "home");
         }
 

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
+using System.Configuration;
 
 namespace WhatchaWatchin.Controllers
 {
@@ -109,7 +110,8 @@ namespace WhatchaWatchin.Controllers
 
         public static Movie CreateMovieByTitle(string title)
         {
-            HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + title);
+            string apiKey = ConfigurationManager.AppSettings["MovieAPIKey"];
+            HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=" + apiKey +"&t=" + title);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 

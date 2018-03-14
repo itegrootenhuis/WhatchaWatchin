@@ -21,18 +21,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Begin", "PickGenre", "Home")</li>
+                    <li>@Html.ActionLink("Movie Survey", "PickGenre", "Home")</li>
+                    <li>@Html.ActionLink("My Ratings", "MyRatings", "Home")</li>
                     <li>@Html.ActionLink("Contact Us ", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer id="footer">
+            <p>&copy; @DateTime.Now.Year - WhatchaWatchin</p>
         </footer>
     </div>
 

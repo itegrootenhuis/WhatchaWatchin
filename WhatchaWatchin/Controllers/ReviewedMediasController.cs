@@ -19,12 +19,13 @@ namespace WhatchaWatchin.Controllers
         {
             return View(db.Media.ToList());
         }
-        // GET: ReviewedMedias
+
         public ActionResult Index()
         {
             return View(db.ReviewedMedias.ToList());
         }
 
+        //This Packages Data from our Survey, and sends it using the StoreInDatabase Method
         public ActionResult SendData(string[] userRatings)
         {
             List<int> baseSurveyMovieIDs;
@@ -77,6 +78,7 @@ namespace WhatchaWatchin.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        //This Stores the data from our Survey in our DB
         public void StoreInDatabase(List<ReviewedMedia> baseFive)
         {
             foreach (ReviewedMedia movie in baseFive)
@@ -105,6 +107,7 @@ namespace WhatchaWatchin.Controllers
             RedirectToAction("index");
         }
 
+        //This Calls the SQL Stored Procedure to Calclulate a sugguested movie based on other user's ratings
         public ActionResult TheAlgorithm()
         {
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);

@@ -94,3 +94,18 @@ C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatc
 C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CopyComplete
 C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
 C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\ApplicationInsights.config
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll.config
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.pdb
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csprojResolveAssemblyReference.cache
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CoreCompileInputs.cache
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\bin\ApplicationInsights.config
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll.config
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.pdb
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CoreCompileInputs.cache
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb

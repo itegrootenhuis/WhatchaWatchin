@@ -1,24 +1,41 @@
 ﻿@model IEnumerable<WhatchaWatchin.Models.Medium>
 @{
-    ViewBag.Title = "SingleRate";
+	ViewBag.Title = "SingleRate";
 }
+<div class="container">
+	<section id="single-rate-page">
+		<div class="row">
+			<form action="AddSingleRateToDB">
+				@foreach (var item in Model)
+				{
+					<div class="col-md-5">
+						<img class="poster" src="@item.Poster" />
+					</div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <form action="AddSingleRateToDB">
-                @foreach (var item in Model)
-                    {
-                            <h1>Please rate <br /> @item.Title)!</h1>
-                            <input type="number" name="userRating" value="5" min="1" max="10" />
-                            <input type="submit" name="Ratings" value="Submit" />
-                            <br />
-                            <img src="@item.Poster)" />
-                            <div class="col-md-4">
-                                <h2>Year: @item.Year)</h2>
-                                <h2>Genre: @item.Genre)</h2>
-                                <h4>Plot: @item.Title)<h4>
-                            </div>
-                    }
-            </form>
-        </div>
-        </div>
+					<div class="col-md-7">
+						<h3>@item.Title</h3>
+						<p>Plot: @item.Plot</p>
+						<p>Genre: @item.Genre</p>
+						<p>Rated: @item.MPAARating</p>
+						<p>Runtime: @item.Runtime</p>
+						<p>Year: @item.Year</p>
+						<p>Please rate the movie</p>
+						<input class="form-control" type="number" name="userRating" value="5" min="1" max="10" />
+						<input class="btn-default btn" type="submit" name="Ratings" value="Submit" />
+					</div>
+
+					@*<h1>Please rate  @item.Title)!</h1>
+						<input type="number" name="userRating" value="5" min="1" max="10" />
+						<input type="submit" name="Ratings" value="Submit" />
+						<br />
+						<img src="@item.Poster)" />
+						<div class="col-md-4">
+							<p>Year: @item.Year)</p>
+							<p>Genre: @item.Genre)</p>
+							<p>Plot: @item.Title)<h4>
+						</div>*@
+				}
+			</form>
+		</div>
+	</section>
+</div>

@@ -1,7 +1,7 @@
 ﻿#banner {
 	background: url(images/banner.jpg);
 	background-size: cover;
-	min-height: 600px;
+	min-height: 500px;
 }
 #banner h1{
 	font-weight:bolder;
@@ -40,18 +40,9 @@
 }
 #footer {
 	clear: both;
-	border: 1px groove #aaaaaa;
-	background: #222222;
-	color: #999999;
-	padding: 20px;
 	text-align: center;
-	vertical-align: middle;
-	line-height: normal;
-	margin: 0;
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
 	width: 100%;
+	margin-top: 20px;
 }
 .poster {
 	position: relative;
@@ -93,11 +84,11 @@
 	margin-top: 20px;
 }
 
-#suggestion-page h3 {
+#suggestion-page h3, #single-rate-page h3 {
 	margin-top: 0px;
 	font-size: 6rem;
 }
-#suggestion-page p {
+#suggestion-page p, #single-rate-page p {
 	font-size: 2rem;
 }
 #suggestion-page #new-movie {
@@ -124,4 +115,36 @@
 	margin-bottom: 50px;
 	text-align: center;
 	font-size: 7rem;
+}
+#single-rate-page .row{
+	margin-top: 30px;
+}
+#single-rate-page .poster {
+	position: relative;
+	width: 400px;
+	height: 550px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 5px;
+}
+
+#single-rate-page .form-control, {
+	width: 15%;
+	margin-right: 1%;
+	float: left;
+}
+#error-single-page h2 {
+	text-align: center;
+	font-size: 4rem;
+}
+#error-single-page p {
+	text-align: center;
+	font-size: 2rem;
+}
+#error-single-page .form-control {
+	width: 60%;
+	margin-right: 1%;
+	margin-left: 36%;
+	float: left;
 }

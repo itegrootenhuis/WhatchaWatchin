@@ -1,0 +1,127 @@
+﻿#banner {
+	background: url(images/banner.jpg);
+	background-size: cover;
+	min-height: 600px;
+}
+#banner h1{
+	font-weight:bolder;
+	font-size: 16rem;
+	text-align: center;
+	margin-top: 100px;
+	color: #fff;
+}
+#recommend-btn {
+	width: 100%;
+}
+#movie-search{
+	width: 100%;
+	float: left;
+	border-radius: 5px;
+}
+#submit-search{
+	margin-left: 3%;
+}
+#search-div{
+	margin-top: 5px;
+	margin-left: 15%;
+}
+#input-row{
+	margin-top: 50px;
+}
+#genre-page h3{
+	margin-top: 100px;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 7rem;
+}
+.genre-btn{
+	margin-left: 7%;
+	margin-top: 10px;
+}
+#footer {
+	clear: both;
+	border: 1px groove #aaaaaa;
+	background: #222222;
+	color: #999999;
+	padding: 20px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: normal;
+	margin: 0;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+}
+.poster {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 5px;
+}
+.movie {
+	position: relative;
+	margin-bottom: 15px;
+	padding-bottom: 50px;
+}
+.input-rating{
+	width: 60%;
+	float: left;
+	margin-right: 1%;
+	position: absolute;
+	bottom: 0px;
+}
+.have-not-seen {
+	float: right;
+	position: absolute;
+	bottom: 0px;
+	right: 10px;
+}
+.suggestion-poster {
+	position: relative;
+	width: 400px;
+	height: 500px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 5px;
+}
+#suggestion-page .row{
+	margin-top: 20px;
+}
+
+#suggestion-page h3 {
+	margin-top: 0px;
+	font-size: 6rem;
+}
+#suggestion-page p {
+	font-size: 2rem;
+}
+#suggestion-page #new-movie {
+	clear: both;
+	padding-top: 20px;
+}
+.head-shot {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 5px;
+}
+#contact-page h2 {
+	font-size: 4rem;
+}
+#contact-page a{
+	font-size: 2rem;
+}
+#rate-page h3 {
+	margin-top: 30px;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 7rem;
+}

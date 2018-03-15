@@ -143,6 +143,7 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("the wedding singer"),
                 CreateMovieByTitle("the house"),
                 CreateMovieByTitle("father figures"),
+                CreateMovieByTitle("the pink panther"),
             };
             return comedies;
         }
@@ -156,6 +157,7 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("flatliners"),
                 CreateMovieByTitle("hidden_figures"),
                 CreateMovieByTitle("phantom_thread"),
+                CreateMovieByTitle("Creed")
             };
             return drama;
         }
@@ -169,6 +171,7 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("Taken"),
                 CreateMovieByTitle("Expendables_3"),
                 CreateMovieByTitle("Deadpool"),
+                CreateMovieByTitle("The Dark Knight")
             };
             return action;
         }
@@ -183,6 +186,7 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("it"),
                 CreateMovieByTitle("jigsaw"),
                 CreateMovieByTitle("leatherface"),
+                CreateMovieByTitle("halloween")
             };
             return horror;
         }
@@ -196,6 +200,7 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("Finding Dory"),
                 CreateMovieByTitle("Toy Story"),
                 CreateMovieByTitle("Minions"),
+                CreateMovieByTitle("Mulan")
             };
             return family;
         }
@@ -209,6 +214,7 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("Split"),
                 CreateMovieByTitle("Don't Breathe"),
                 CreateMovieByTitle("Gravity"),
+                CreateMovieByTitle("Disturbia")
             };
             return thriller;
         }

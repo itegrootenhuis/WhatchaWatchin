@@ -38,6 +38,13 @@
 	margin-left: 7%;
 	margin-top: 10px;
 }
+#rate-page .col-md-12 {
+	clear: both;
+}
+#rate-page .col-md-12 input{
+	width: 100%;
+	margin-left: 37%;
+}
 #footer {
 	clear: both;
 	text-align: center;
@@ -53,8 +60,17 @@
 	background-size: cover;
 	margin-bottom: 5px;
 }
+#rate-page .row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .movie {
-	position: relative;
+	display: flex;
+	flex-direction: column;
 	margin-bottom: 15px;
 	padding-bottom: 50px;
 }

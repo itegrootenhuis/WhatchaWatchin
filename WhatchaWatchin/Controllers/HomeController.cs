@@ -164,7 +164,6 @@ namespace WhatchaWatchin.Controllers
 
         public static List<Movie> ActionMovieList()
         {
-
             List<Movie> action = new List<Movie>
             {
                 CreateMovieByTitle("Avengers"),

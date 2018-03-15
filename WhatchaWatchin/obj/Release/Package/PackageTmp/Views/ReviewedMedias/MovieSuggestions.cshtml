@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Models.Movie>
+
+@{
+	ViewBag.Title = "MovieSuggestions";
+}
+
+<div class="container">
+	<section id="suggestion-page">
+		@foreach (var item in Model)
+		{
+			@*<h1>Users with similar movie taste recommend @item.Title for you to watch!</h1>*@
+			<div class="row">
+				<div class="col-md-5">
+					<img class="suggestion-poster" src="@item.Poster" />
+				</div>
+
+				<div class="col-md-7">
+					<h3>@item.Title</h3>
+					<p>Plot: @item.Plot</p>
+					<p>Genre: @item.Genre</p>
+					<p>Rated: @item.MpaaRating</p>
+					<p>Runtime: @item.Runtime</p>
+					<p>Year: @item.Year</p>
+				</div>
+				<div id="new-movie" class="col-md-12">
+					<form action="@Url.Action("TheAlgorithm", "ReviewedMedias")">
+						<p>Doesn't sound interesting?</p>
+						<input class="btn btn-default" type="submit" name="RecommendMovie" value="Get a different movie!" />
+					</form>
+				</div>
+			</div>
+		}
+	</section>
+</div>
+

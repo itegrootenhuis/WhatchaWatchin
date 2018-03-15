@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Models.ReturnedCurrentUserRating>
+
+@{
+	ViewBag.Title = "MyRatings";
+}
+<div class="container">
+	<h2>MyRatings</h2>
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Title)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Rating)
+			</th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Title)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Rating)
+				</td>
+			</tr>
+		}
+	</table>
+</div>

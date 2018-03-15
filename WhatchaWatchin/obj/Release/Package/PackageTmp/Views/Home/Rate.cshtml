@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Models.Movie>
+
+@{
+	int counter = 0;
+}
+
+<div class="container">
+	<section id="rate-page">
+		<h3>Establish your taste with this base survey</h3>
+		<form action="@Url.Action("SendData", "ReviewedMedias")" method="post">
+			<div class="row">
+				@foreach (var movie in Model)
+				{
+					if (counter != 0 && counter % 3 == 0)
+					{
+						@:</div>
+						@:<div class="row">
+					}
+
+					<div class="movie col-md-4">
+						<h1>@movie.Title</h1>
+						<img class="poster" src="@movie.Poster" alt="Alternate Text" />
+						<p>Rated @movie.MpaaRating</p>
+						<p>@movie.Plot</p>
+						<input class="input-rating form-control" type="number" name="userRatings[]" value="5" min="1" max="10" />
+						<input class="have-not-seen btn btn-default" type="button" name="seen" value="Have Not Seen" />
+					</div>
+					counter++;
+				}
+				<div class="col-md-12">
+					<input class="btn btn-primary" type="submit" name="Ratings" value="Submit" />
+				</div>
+			</div>
+		</form>
+	</section>
+</div>
+

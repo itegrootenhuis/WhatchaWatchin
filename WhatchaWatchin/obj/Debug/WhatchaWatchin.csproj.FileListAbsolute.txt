@@ -108,3 +108,4 @@ C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaW
 C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CoreCompileInputs.cache
 C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
 C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csprojResolveAssemblyReference.cache

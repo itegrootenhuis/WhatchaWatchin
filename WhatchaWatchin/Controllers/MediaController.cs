@@ -45,6 +45,7 @@ namespace WhatchaWatchin.Controllers
             da.Fill(ds);
             con.Close();
 
+            TempData["message"] = string.Format("You have successfully rated {0}!", TempData["SearchedTitle"].ToString());
             return RedirectToAction("index", "home");
         }
 
@@ -142,9 +143,6 @@ namespace WhatchaWatchin.Controllers
             Session["returnedMovieID"] = returnedMovies[0].MovieID;
         }
 
-
-
-
         // GET: Media
         public ActionResult Index()
         {
@@ -185,7 +183,6 @@ namespace WhatchaWatchin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(medium);
         }
 

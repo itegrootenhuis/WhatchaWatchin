@@ -8,6 +8,7 @@
 			<form action="AddSingleRateToDB">
 				@foreach (var item in Model)
 				{
+					TempData["SearchedTitle"] = item.Title;
 					<div class="col-md-5">
 						<img class="poster" src="@item.Poster" />
 					</div>

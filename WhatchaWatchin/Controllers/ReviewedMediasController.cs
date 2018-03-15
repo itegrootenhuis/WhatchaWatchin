@@ -36,28 +36,20 @@ namespace WhatchaWatchin.Controllers
             }
             else if (Session["genreChoice"].ToString() == "Action")
             {
-
                 baseSurveyMovieIDs = new List<int>() { 38, 68, 69, 70, 12, 43 };
-
             }
 
             else if (Session["genreChoice"].ToString() == "Thriller")
             {
-
                 baseSurveyMovieIDs = new List<int>() { 63, 65, 64, 67, 71, 121 };
-
             }
             else if (Session["genreChoice"].ToString() == "Horror")
             {
-
                 baseSurveyMovieIDs = new List<int>() { 72, 134, 74, 75, 76, 135 };
-
             }
             else if (Session["genreChoice"].ToString() == "Family")
             {
-
                 baseSurveyMovieIDs = new List<int>() { 77, 78, 115, 125, 80, 118 };
-
             }
             else
             {
@@ -75,6 +67,7 @@ namespace WhatchaWatchin.Controllers
             }
             StoreInDatabase(reviewedMediaList);
 
+            TempData["message"] = string.Format("You have successfully rated the {0} survey!", Session["genreChoice"].ToString());
             return RedirectToAction("Index", "Home");
         }
 
@@ -83,7 +76,7 @@ namespace WhatchaWatchin.Controllers
         {
             foreach (ReviewedMedia movie in baseFive)
             {
-                if (ModelState.IsValid)
+                if (ModelState.IsValid && movie.UserRating != 0)
                 {
                     SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["WhatchaWatchinConnection"].ConnectionString);
                     SqlCommand cmd = new SqlCommand("dbo.sp_StoreOrUpdateReviewedMedia", con);

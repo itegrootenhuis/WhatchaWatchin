@@ -140,7 +140,7 @@ namespace WhatchaWatchin.Controllers
             {
                 CreateMovieByTitle("downsizing"),
                 CreateMovieByTitle("big_sick"),
-                CreateMovieByTitle("Lego_movie"),
+                CreateMovieByTitle("the wedding singer"),
                 CreateMovieByTitle("the house"),
                 CreateMovieByTitle("father figures"),
             };
@@ -179,7 +179,7 @@ namespace WhatchaWatchin.Controllers
             List<Movie> horror = new List<Movie>
             {
                 CreateMovieByTitle("krampus"),
-                CreateMovieByTitle("the purge: election year"),
+                CreateMovieByTitle("lights out"),
                 CreateMovieByTitle("it"),
                 CreateMovieByTitle("jigsaw"),
                 CreateMovieByTitle("leatherface"),
@@ -193,8 +193,8 @@ namespace WhatchaWatchin.Controllers
             {
                 CreateMovieByTitle("The Boss Baby"),
                 CreateMovieByTitle("Despicable Me"),
-                CreateMovieByTitle("The Lego Batman Movie"),
-                CreateMovieByTitle("The Spongebob Squarepants Movie"),
+                CreateMovieByTitle("Finding Dory"),
+                CreateMovieByTitle("Toy Story"),
                 CreateMovieByTitle("Minions"),
             };
             return family;

@@ -11,7 +11,7 @@ C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\Applicatio
 C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll.config
 C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll
 C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.pdb
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Release\WhatchaWatchin.csprojResolveAssemblyReference.cache
 C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Release\WhatchaWatchin.csproj.CoreCompileInputs.cache
 C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Release\WhatchaWatchin.dll
 C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Release\WhatchaWatchin.pdb
-C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Release\WhatchaWatchin.csprojResolveAssemblyReference.cache

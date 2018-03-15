@@ -10,7 +10,11 @@
             $inputRating.val('0');
             $inputRating.attr('min', 0);
         });
-    }
+	}
+
+	function NotifyDataSaved(msg) {
+		alert(msg)
+	}
 
     init();
 });

@@ -1,0 +1,15 @@
+﻿@{
+	ViewBag.Title = "ErrorSingleSearch";
+}
+<div class="container">
+	<section id="error-single-page">
+		<div class="row">
+			<h2>Looks like @ViewBag.BadMovieSearch doesn't exist in our database</h2>
+			<form action="@Url.Action("GetMovieToRate", "Media")">
+				<p>Let's learn more about your movie taste. Type a movie in the searchbox that you want to rate!</p>
+				<input class="form-control" type="text" placeholder="Movie Title" name="movieToSearch" />
+				<input class="btn btn-default" type="submit" />
+			</form>
+		</div>
+	</section>
+</div>

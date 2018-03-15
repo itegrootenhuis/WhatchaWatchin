@@ -1,0 +1,110 @@
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\ApplicationInsights.config
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.pdb
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Antlr3.Runtime.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\EntityFramework.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\EntityFramework.SqlServer.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.Web.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.ApplicationInsights.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Newtonsoft.Json.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Owin.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.Helpers.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.Mvc.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.Optimization.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.Razor.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.WebPages.Deployment.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.WebPages.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.WebPages.Razor.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\WebGrease.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\EntityFramework.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\EntityFramework.SqlServer.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Newtonsoft.Json.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.Helpers.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.Mvc.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.Optimization.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.Razor.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.WebPages.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.WebPages.Deployment.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\System.Web.WebPages.Razor.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Antlr3.Runtime.pdb
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.ApplicationInsights.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\Microsoft.AI.Web.xml
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csprojResolveAssemblyReference.cache
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CoreCompileInputs.cache
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb
+C:\Users\adamt\source\repos\Final Project\FinalProject\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll.config
+C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\bin\ApplicationInsights.config
+C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll
+C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.pdb
+C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CoreCompileInputs.cache
+C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
+C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb
+C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll.config
+C:\Users\adamt\source\repos\Final Project\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csprojResolveAssemblyReference.cache
+C:\Users\Grand Circus Student\source\repos\final project file\WhatchaWatchin\WhatchaWatchin\bin\ApplicationInsights.config
+C:\Users\Grand Circus Student\source\repos\final project file\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll.config
+C:\Users\Grand Circus Student\source\repos\final project file\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll
+C:\Users\Grand Circus Student\source\repos\final project file\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.pdb
+C:\Users\Grand Circus Student\source\repos\final project file\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CoreCompileInputs.cache
+C:\Users\Grand Circus Student\source\repos\final project file\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
+C:\Users\Grand Circus Student\source\repos\final project file\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb
+C:\Users\Grand Circus Student\source\repos\final project file\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csprojResolveAssemblyReference.cache
+C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\bin\ApplicationInsights.config
+C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll.config
+C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll
+C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.pdb
+C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csprojResolveAssemblyReference.cache
+C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CoreCompileInputs.cache
+C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CopyComplete
+C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
+C:\Users\Grand Circus Student\source\repos\New folder\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\ApplicationInsights.config
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll.config
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.pdb
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CoreCompileInputs.cache
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
+C:\Users\test\Documents\GrandCircus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\bin\ApplicationInsights.config
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll.config
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.dll
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\bin\WhatchaWatchin.pdb
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.csproj.CoreCompileInputs.cache
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.dll
+C:\Users\TeGro\Documents\Grand Circus\WhatchaWatchin\WhatchaWatchin\obj\Debug\WhatchaWatchin.pdb

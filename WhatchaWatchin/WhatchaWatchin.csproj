@@ -374,8 +374,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Custom.css" />
+    <Content Include="Content\images\AdamTasma.jpg" />
     <Content Include="Content\images\banner.jpg" />
+    <Content Include="Content\images\ChamusGilbert.jpg" />
+    <Content Include="Content\images\Lamar-Campbell-2.jpg" />
     <Content Include="obj\Release\CSAutoParameterize.parameters.xml" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\Views\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\Web.config" />
+    <None Include="obj\Release\CSAutoParameterize\original\Views\Web.config" />
     <Content Include="obj\Release\Package\PackageTmp\bin\Antlr3.Runtime.dll" />
     <Content Include="obj\Release\Package\PackageTmp\bin\Antlr3.Runtime.pdb" />
     <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.dll" />
@@ -431,10 +437,8 @@
     <Content Include="obj\Release\WhatchaWatchin.dll" />
     <Content Include="obj\Release\WhatchaWatchin.pdb" />
     <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
+    <Content Include="Scripts\bootstrap-notify.min.js" />
     <Content Include="Scripts\Custom.js" />
-    <Content Include="Content\images\Adam Tasma.jpg" />
-    <Content Include="Content\images\buckeyetroll.jpg" />
-    <Content Include="Content\images\Chamus Gilbert.jpg" />
     <Content Include="Content\images\ian.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -498,10 +502,7 @@
     <Content Include="Models\NewWhatchaWatchin.edmx.diagram">
       <DependentUpon>NewWhatchaWatchin.edmx</DependentUpon>
     </Content>
-    <Content Include="obj\Release\CSAutoParameterize\original\Views\Web.config" />
-    <Content Include="obj\Release\CSAutoParameterize\original\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\transformed\Views\Web.config" />
-    <Content Include="obj\Release\CSAutoParameterize\transformed\Web.config" />
     <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Release\edmxResourcesToEmbed\Models\NewWhatchaWatchin.csdl" />
     <Content Include="obj\Release\edmxResourcesToEmbed\Models\NewWhatchaWatchin.msl" />
@@ -523,20 +524,22 @@
     <Content Include="obj\Release\TransformWebConfig\transformed\Web.config" />
     <Content Include="obj\Release\WhatchaWatchin.csproj.CopyComplete" />
     <Content Include="obj\Release\WhatchaWatchin.csproj.CoreCompileInputs.cache" />
-    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\Views\Web.config" />
-    <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\transformed\Views\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\transformed\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\assist\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\original\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\original\obj\Release\TransformWebConfig\transformed\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\original\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\transformed\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\transformed\obj\Release\CSAutoParameterize\original\Views\Web.config" />
     <Content Include="obj\Release\CSAutoParameterize\transformed\obj\Release\CSAutoParameterize\original\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\transformed\obj\Release\CSAutoParameterize\transformed\Web.config" />
     <None Include="Properties\PublishProfiles\WhatchaWatchin - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -597,10 +600,12 @@
     <Content Include="Views\Home\MyRatings.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Media\ErrorSingleSearch.cshtml" />
+    <Content Include="Views\Home\WelcomeExplanation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\CSAutoParameterize\original\obj\Release\CSAutoParameterize\original\NewFolder1\" />
     <Folder Include="obj\Release\CSAutoParameterize\transformed\obj\Release\CSAutoParameterize\transformed\Views\" />
     <Folder Include="obj\Release\CSAutoParameterize\transformed\obj\Release\TransformWebConfig\assist\" />
     <Folder Include="obj\Release\CSAutoParameterize\transformed\obj\Release\TransformWebConfig\original\" />

@@ -45,11 +45,13 @@ namespace WhatchaWatchin.Controllers
             da.Fill(ds);
             con.Close();
 
+            TempData["message"] = string.Format("You have successfully rated {0}!", TempData["SearchedTitle"].ToString());
             return RedirectToAction("index", "home");
         }
 
         public ActionResult GetMovieToRate(string movieToSearch)
         {
+            List<Medium> mediums = new List<Medium>();
             HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + movieToSearch);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -74,13 +76,7 @@ namespace WhatchaWatchin.Controllers
             try
             {
                 Medium m = new Medium(_title.ToString(), _plot.ToString(), _poster.ToString(), _genre.ToString(), _year.ToString(), _type.ToString(), _mpaaRating.ToString(), _runtime.ToString(), _language.ToString(), decimal.Parse(_imdbRating.ToString()), _website.ToString(), _imdbID.ToString());
-
-                ViewBag.theTitle = _title;
-                ViewBag.thePoster = _poster;
-                ViewBag.thePlot = _plot;
-                ViewBag.theGenre = _genre;
-                ViewBag.theYear = _year;
-
+                mediums.Add(m);
                 MethodThatAddsMovieOjbectToDatabase(m);
             }
             catch (Exception e)
@@ -88,7 +84,7 @@ namespace WhatchaWatchin.Controllers
                 ViewBag.BadMovieSearch = movieToSearch;
                 return View("ErrorSingleSearch");
             }
-            return View("SingleRate");
+            return View("SingleRate", mediums);
         }
 
         public ActionResult SingleRate()
@@ -147,9 +143,6 @@ namespace WhatchaWatchin.Controllers
             Session["returnedMovieID"] = returnedMovies[0].MovieID;
         }
 
-
-
-
         // GET: Media
         public ActionResult Index()
         {
@@ -190,7 +183,6 @@ namespace WhatchaWatchin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(medium);
         }
 

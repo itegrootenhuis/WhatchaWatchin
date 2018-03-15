@@ -8,13 +8,17 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
-using System.Configuration;
 
 namespace WhatchaWatchin.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
+        public ActionResult WelcomeExplanation()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -110,8 +114,7 @@ namespace WhatchaWatchin.Controllers
 
         public static Movie CreateMovieByTitle(string title)
         {
-            string apiKey = ConfigurationManager.AppSettings["MovieAPIKey"];
-            HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=" + apiKey +"&t=" + title);
+            HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + title);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
@@ -142,9 +145,10 @@ namespace WhatchaWatchin.Controllers
             {
                 CreateMovieByTitle("downsizing"),
                 CreateMovieByTitle("big_sick"),
-                CreateMovieByTitle("Lego_movie"),
+                CreateMovieByTitle("the wedding singer"),
                 CreateMovieByTitle("the house"),
                 CreateMovieByTitle("father figures"),
+                CreateMovieByTitle("the pink panther"),
             };
             return comedies;
         }
@@ -158,13 +162,13 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("flatliners"),
                 CreateMovieByTitle("hidden_figures"),
                 CreateMovieByTitle("phantom_thread"),
+                CreateMovieByTitle("Creed")
             };
             return drama;
         }
 
         public static List<Movie> ActionMovieList()
         {
-
             List<Movie> action = new List<Movie>
             {
                 CreateMovieByTitle("Avengers"),
@@ -172,6 +176,7 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("Taken"),
                 CreateMovieByTitle("Expendables_3"),
                 CreateMovieByTitle("Deadpool"),
+                CreateMovieByTitle("The Dark Knight")
             };
             return action;
         }
@@ -182,10 +187,11 @@ namespace WhatchaWatchin.Controllers
             List<Movie> horror = new List<Movie>
             {
                 CreateMovieByTitle("krampus"),
-                CreateMovieByTitle("the purge: election year"),
+                CreateMovieByTitle("lights out"),
                 CreateMovieByTitle("it"),
                 CreateMovieByTitle("jigsaw"),
                 CreateMovieByTitle("leatherface"),
+                CreateMovieByTitle("halloween")
             };
             return horror;
         }
@@ -196,9 +202,10 @@ namespace WhatchaWatchin.Controllers
             {
                 CreateMovieByTitle("The Boss Baby"),
                 CreateMovieByTitle("Despicable Me"),
-                CreateMovieByTitle("The Lego Batman Movie"),
-                CreateMovieByTitle("The Spongebob Squarepants Movie"),
+                CreateMovieByTitle("Finding Dory"),
+                CreateMovieByTitle("Toy Story"),
                 CreateMovieByTitle("Minions"),
+                CreateMovieByTitle("Mulan")
             };
             return family;
         }
@@ -212,6 +219,7 @@ namespace WhatchaWatchin.Controllers
                 CreateMovieByTitle("Split"),
                 CreateMovieByTitle("Don't Breathe"),
                 CreateMovieByTitle("Gravity"),
+                CreateMovieByTitle("Disturbia")
             };
             return thriller;
         }

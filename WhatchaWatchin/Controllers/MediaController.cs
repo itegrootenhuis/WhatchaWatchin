@@ -11,7 +11,6 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using WhatchaWatchin.Models;
-using System.Configuration;
 
 namespace WhatchaWatchin.Controllers
 {
@@ -51,9 +50,8 @@ namespace WhatchaWatchin.Controllers
 
         public ActionResult GetMovieToRate(string movieToSearch)
         {
-            string apiKey = ConfigurationManager.AppSettings["MovieAPIKey"];
             List<Medium> mediums = new List<Medium>();
-            HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=" + apiKey + "&t=" + movieToSearch);
+            HttpWebRequest request = WebRequest.CreateHttp("http://www.omdbapi.com/?apikey=d0069624&t=" + movieToSearch);
             request.UserAgent = @"User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 

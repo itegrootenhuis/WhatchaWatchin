@@ -32,36 +32,36 @@ namespace WhatchaWatchin.Controllers
             List<ReviewedMedia> reviewedMediaList = new List<ReviewedMedia>();
             if (Session["genreChoice"].ToString() == "Comedy")
             {
-                baseSurveyMovieIDs = new List<int>() { 1, 2, 3, 4, 5 };
+                baseSurveyMovieIDs = new List<int>() { 1, 2, 122, 4, 5, 24 };
             }
             else if (Session["genreChoice"].ToString() == "Action")
             {
 
-                baseSurveyMovieIDs = new List<int>() { 38, 68, 69, 70, 12 };
+                baseSurveyMovieIDs = new List<int>() { 38, 68, 69, 70, 12, 43 };
 
             }
 
             else if (Session["genreChoice"].ToString() == "Thriller")
             {
 
-                baseSurveyMovieIDs = new List<int>() { 63, 65, 64, 67, 71 };
+                baseSurveyMovieIDs = new List<int>() { 63, 65, 64, 67, 71, 121 };
 
             }
             else if (Session["genreChoice"].ToString() == "Horror")
             {
 
-                baseSurveyMovieIDs = new List<int>() { 72, 73, 74, 75, 76 };
+                baseSurveyMovieIDs = new List<int>() { 72, 134, 74, 75, 76, 135 };
 
             }
             else if (Session["genreChoice"].ToString() == "Family")
             {
 
-                baseSurveyMovieIDs = new List<int>() { 77, 78, 22, 79, 80 };
+                baseSurveyMovieIDs = new List<int>() { 77, 78, 115, 125, 80, 118 };
 
             }
             else
             {
-                baseSurveyMovieIDs = new List<int>() { 6, 7, 8, 9, 10 };
+                baseSurveyMovieIDs = new List<int>() { 6, 7, 8, 9, 10, 106 };
             }
             for (int i = 0; i < userRatings.Length; i++)
             {

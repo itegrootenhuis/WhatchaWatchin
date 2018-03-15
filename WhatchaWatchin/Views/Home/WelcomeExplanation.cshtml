@@ -1,0 +1,27 @@
+﻿
+@{
+	ViewBag.Title = "WelcomeExplanation";
+}
+<h2 class="WelcomeTitle">Welcome and thank you for choosing Whatcha Watchin!</h2>
+<h3 class="intro">
+	Since this is your first time here, let us explain how this works.
+	We are going to ask you to rate some movies, so that we establish your movie taste. After we have an idea of your preferences,
+	our application will determine other users who have similar tastes as you, and we can then recommend a movie that those users have rated highly.
+	<br />
+	To start, we are going to ask you to rate some pre-chosen movies from a specific genre, just to get you setup in our database.
+	Later, you can take surveys from other genres, or even search your own movies you want to rate.
+</h3>
+	<div class=" = WelcomeTitle">
+	<form action="PickGenre">
+		<input class="btn-lg btn btn-primary" type="submit" value="Lets get started!"/>
+	</form>
+</div>
+
+<style>
+	.intro {
+		margin: 45px;
+	}
+	.WelcomeTitle {
+		text-align: center;
+	}
+</style>

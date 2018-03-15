@@ -14,6 +14,11 @@ namespace WhatchaWatchin.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        public ActionResult WelcomeExplanation()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             return View();

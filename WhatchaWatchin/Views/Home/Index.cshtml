@@ -10,17 +10,15 @@
 		<div id="input-row" class="row">
 			<div id="search-div" class="col-md-5 input-group">
 				<form action="@Url.Action("GetMovieToRate", "Media")">
-					@*<p>Let's learn more about your movie taste. Type a movie in the searchbox that you want to rate!</p>*@
+					<p>Let's learn more about your movie taste. <br/>Type a movie in the searchbox that you want to rate!</p>
 					<input id="movie-search" class="form-control input-lg" type="text" placeholder="Movie Title" name="movieToSearch" />
 					<input id="submit-search" class="btn-lg btn btn-default" type="submit" />
-					<span class="help-block">Search a movie you wanna rate!</span>
 				</form>
 			</div>
 			<div class="col-md-4 input-group">
 				<form action="@Url.Action("TheAlgorithm", "ReviewedMedias")">
-					@*<label>Do we have an idea of your movie tastes already? Hit recommend and get a recommended movie!</label>*@
+					<p>Do we have an idea of your movie taste?<br />Let us recommend a movie!</p> 
 					<input id="recommend-btn" class="btn-lg btn btn-primary" type="submit" name="RecommendMovie" value="Recommend me a Movie!" />
-					<span class="help-block">Get recommened a movie based off your taste!</span>
 				</form>
 			</div>
 		</div>

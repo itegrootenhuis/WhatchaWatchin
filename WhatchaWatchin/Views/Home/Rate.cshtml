@@ -1,54 +1,37 @@
 ﻿@model IEnumerable<Models.Movie>
 
-@*<div class="container">
-	<div class="row">
-		<div class="col-container">
-			<div class="col col-md-4">
-				<h2>Column 1</h2>
-				<p>Hello World</p>
-			</div>
-
-			<div class="col col-md-4">
-				<h2>Column 2</h2>
-				<p>Hello World!</p>
-				<p>Hello World!</p>
-				<p>Hello World!</p>
-				<p>Hello World!</p>
-			</div>
-
-			<div class="col col-md-4">
-				<h2>Column 3</h2>
-				<p>Some other text..</p>
-				<p>Some other text..</p>
-			</div>
-		</div>
-	</div>
-</div>*@
-
+@{
+	int counter = 0;
+}
 
 <div class="container">
 	<section id="rate-page">
 		<h3>Establish your taste with this base survey</h3>
-		<div class="row">
-			<form action="@Url.Action("SendData", "ReviewedMedias")" method="post">
-				<div class="is-table-row">
-					@foreach (var movie in Model)
+		<form action="@Url.Action("SendData", "ReviewedMedias")" method="post">
+			<div class="row">
+				@foreach (var movie in Model)
+				{
+					if (counter != 0 && counter % 3 == 0)
 					{
-						<div class="movie col-md-4">
-							<h1>@movie.Title</h1>
-							<img class="poster" src="@movie.Poster" alt="Alternate Text" />
-							<p>Rated @movie.MpaaRating</p>
-							<p>@movie.Plot</p>
-							<input class="input-rating form-control" type="number" name="userRatings[]" value="5" min="1" max="10" />
-							<input class="have-not-seen btn btn-default" type="button" name="seen" value="Have Not Seen" />
-						</div>
+						@:</div>
+						@:<div class="row">
 					}
-					<div class="col-md-12">
-						<input class="btn btn-primary" type="submit" name="Ratings" value="Submit" />
+
+					<div class="movie col-md-4">
+						<h1>@movie.Title</h1>
+						<img class="poster" src="@movie.Poster" alt="Alternate Text" />
+						<p>Rated @movie.MpaaRating</p>
+						<p>@movie.Plot</p>
+						<input class="input-rating form-control" type="number" name="userRatings[]" value="5" min="1" max="10" />
+						<input class="have-not-seen btn btn-default" type="button" name="seen" value="Have Not Seen" />
 					</div>
+					counter++;
+				}
+				<div class="col-md-12">
+					<input class="btn btn-primary" type="submit" name="Ratings" value="Submit" />
 				</div>
-			</form>
-		</div>
+			</div>
+		</form>
 	</section>
 </div>
 

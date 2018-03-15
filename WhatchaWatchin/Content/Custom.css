@@ -67,7 +67,6 @@
 	display: flex;
 	flex-wrap: wrap;
 }
-
 .movie {
 	display: flex;
 	flex-direction: column;
@@ -99,7 +98,6 @@
 #suggestion-page .row{
 	margin-top: 20px;
 }
-
 #suggestion-page h3, #single-rate-page h3 {
 	margin-top: 0px;
 	font-size: 6rem;
@@ -144,8 +142,7 @@
 	background-size: cover;
 	margin-bottom: 5px;
 }
-
-#single-rate-page .form-control, {
+#single-rate-page .form-control {
 	width: 15%;
 	margin-right: 1%;
 	float: left;

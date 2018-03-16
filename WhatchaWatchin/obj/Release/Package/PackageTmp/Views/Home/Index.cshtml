@@ -1,5 +1,7 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+	ViewBag.Title = "Home Page";
+
+
 }
 <div id="banner" class="row">
 	<h1>Whatcha Watchin</h1>
@@ -24,22 +26,14 @@
 		</div>
 	</section>
 </div>
+<script>
+	if ('@TempData["message"]' != '') {
+		$.notify({
+			message: '@TempData["message"]'
+		}, {
+			type: 'success'
+		});
+	}
 
+</script>
 
-@*<div class="row">
-    <div class="col-md-4">
-		
-	
-	</div>
-    <div class="col-md-4">
-        <h2>Want to see a list of movies you've already rated?</h2>
-		<form action="Home/DisplayMyRatings" method="post">
-			<input type="submit" value="Click Here!"/> 
-		</form>
-  </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>*@

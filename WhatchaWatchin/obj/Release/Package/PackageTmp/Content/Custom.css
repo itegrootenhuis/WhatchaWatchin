@@ -26,7 +26,7 @@
 	margin-left: 15%;
 }
 #input-row{
-	margin-top: 50px;
+	margin-top: 15px;
 }
 #genre-page h3{
 	margin-top: 100px;
@@ -160,4 +160,16 @@
 	margin-right: 1%;
 	margin-left: 36%;
 	float: left;
+}
+#welcome-page h3 {
+	font-size: 6rem;
+	text-align: center;
+	margin-bottom: 20px;
+}
+#welcome-page p {
+	font-size: 2.5rem;
+}
+#welcome-btn{
+	margin-top: 30px;
+	text-align: center;
 }

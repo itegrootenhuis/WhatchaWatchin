@@ -4,11 +4,11 @@
 }
 
 <div class="container">
-	<h2>@ViewBag.Title.</h2>
+	<h2>@ViewBag.Title for a Whatcha Watchin account.</h2>
 	@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 	{
 		@Html.AntiForgeryToken()
-		<h4>Create a new account.</h4>
+		<h4>We need to save your ratings to give you accurate recommendations.</h4>
 		<hr />
 		@Html.ValidationSummary("", new { @class = "text-danger" })
 		<div class="form-group">

@@ -1,11 +1,11 @@
 ﻿#banner {
 	background: url(images/banner.jpg);
 	background-size: cover;
-	min-height: 500px;
+	min-height: 400px;
 }
 #banner h1{
 	font-weight:bolder;
-	font-size: 16rem;
+	font-size: 14rem;
 	text-align: center;
 	margin-top: 100px;
 	color: #fff;
